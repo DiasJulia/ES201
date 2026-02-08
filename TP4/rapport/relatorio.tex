@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Paquets de base ---
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+% --- Paquets pour tableaux et codes ---
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Configuration pour les blocs de code (gem5 stats)
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    breaklines=true,
+    frame=single,
+    captionpos=b
+}
+
+% --- Informations du rapport ---
+\title{Rapport de Travaux Pratiques \\ Architecture des Microprocesseurs \\ TD/TP4 : Évaluation de performances}
+\author{Votre Nom Ici}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Ce rapport présente les résultats obtenus lors du TP4, portant sur l'analyse de l'impact des configurations de mémoire cache et des fenêtres d'instruction sur les performances des processeurs.
+
+\section{Exercice 3 : Évaluation de configurations de mémoires caches}
+
+\subsection{Configurations de simulation}
+Nous avons comparé deux configurations (C1 et C2) pour analyser l'impact de l'associativité sur le taux de défaut (miss rate).
+
+\begin{table}[h!]
+\centering
+\caption{Paramètres des configurations C1 et C2.}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Paramètre & Configuration C1 & Configuration C2 \\ \midrule
+L1-i (Taille/Assoc.) & 4KB / Direct Mapped & 4KB / Direct Mapped \\
+L1-d (Tamanho/Assoc.) & 4KB / Direct Mapped & 4KB / 2-way \\
+L2 (Tamanho/Assoc.)   & 32KB / Direct Mapped & 32KB / 4-way \\
+Taille de bloc      & 32 Bytes & 32 Bytes \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Résultats et Analyse}
+L'analyse porte sur les différentes variantes de l'algorithme de multiplication de matrices (\textit{normal, pointer, tempo, unrol}). 
+
+\begin{itemize}
+    \item \textbf{Localité :} L'augmentation de l'associativité en C2 permet de réduire les conflits dans la cache de données.
+    \item \textbf{Miss Rate :} [Insérez ici vos observations sur les résultats du simulateur].
+\end{itemize}
+
+\section{Exercice 4 : Analyse de performance (Cortex A7 vs A15)}
+
+\subsection{Variation de la taille de cache L1}
+Nous avons fait varier la taille de la cache L1 pour observer l'évolution de l'IPC (Instructions Per Cycle).
+
+\subsection{Efficacité Surfacique et Énergétique}
+En utilisant l'outil CACTI, nous avons calculé l'efficacité en fonction de la surface occupée.
+
+\begin{equation}
+\text{Efficacité Surfacique} = \frac{\text{IPC}}{\text{Surface (mm}^2)}
+\end{equation}
+
+\section{Conclusion}
+Les simulations démontrent que le choix de la configuration de cache est un compromis entre performance (IPC) et coût matériel (surface/consommation). Pour le système \textit{big.LITTLE}, la configuration optimale serait...
+
+\end{document}
