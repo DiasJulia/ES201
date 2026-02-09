@@ -1,3 +1,79 @@
+% \documentclass{article}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage[french]{babel} % Define o idioma do documento para francês
+% \usepackage{array}
+% \usepackage{tabularx}
+% \usepackage{multirow}
+% \usepackage{xcolor}
+
+% \begin{document}
+
+% % --- Tableau 8 ---
+% \begin{table}[h]
+%     \centering
+%     \caption{Paramètres de cache pour chaque configuration}
+%     \vspace{0.5em}
+%     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{3}{>{\centering\arraybackslash}X|}}
+%         \hline
+%         \textbf{Configuration} & \textbf{IL1} & \textbf{DL1} & \textbf{UL2} \\ \hline
+%         C1 & & & \\ \hline
+%         C2 & & & \\ \hline
+%     \end{tabularx}
+% \end{table}
+
+% \vspace{2cm} 
+
+% % --- Tableau 9 ---
+% \begin{table}[h]
+%     \centering
+%     \caption{Instruction Cache (il1) Miss Rate}
+%     \vspace{0.5em}
+%     \begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{2}{>{\centering\arraybackslash}X|}}
+%         \hline
+%         \multirow{2}{*}{\textbf{Programmes}} & \multicolumn{2}{c|}{\textbf{\textcolor{blue}{Configurations de caches}}} \\ \cline{2-3} 
+%                                    & \textbf{C1} & \textbf{C2} \\ \hline
+%         P1 (normale)               & 0.000119    &  0.000119   \\ \hline
+%         P2 (pointeur)              & 0.000089    &  0.000089   \\ \hline
+%         P3 (tempo)                 & 0.000123    &  0.000123   \\ \hline
+%         P4 (unrol)                 & 0.000141    &  0.000141   \\ \hline
+%     \end{tabularx}
+% \end{table}
+
+% % --- Tableau 10 ---
+% \begin{table}[h]
+%     \centering
+%     \caption{Data Cache (dl1) Miss Rate}
+%     \vspace{0.5em}
+%     \begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{2}{>{\centering\arraybackslash}X|}}
+%         \hline
+%         \multirow{2}{*}{\textbf{Programmes}} & \multicolumn{2}{c|}{\textbf{\textcolor{blue}{Configurations de caches}}} \\ \cline{2-3} 
+%                                    & \textbf{C1} & \textbf{C2} \\ \hline
+%         P1 (normale)               &  0.298316   & 0.306917    \\ \hline
+%         P2 (pointeur)              &  0.299729   & 0.308452    \\ \hline
+%         P3 (tempo)                 &  0.299724   & 0.308445    \\ \hline
+%         P4 (unrol)                 &  0.300090   & 0.305467    \\ \hline
+%     \end{tabularx}
+% \end{table}
+
+% % --- Tableau 11 ---
+% \begin{table}[h]
+%     \centering
+%     \caption{Unified Cache (ul2) Miss Rate}
+%     \vspace{0.5em}
+%     \begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{2}{>{\centering\arraybackslash}X|}}
+%         \hline
+%         \multirow{2}{*}{\textbf{Programmes}} & \multicolumn{2}{c|}{\textbf{\textcolor{blue}{Configurations de caches}}} \\ \cline{2-3} 
+%                                    & \textbf{C1} & \textbf{C2} \\ \hline
+%         P1 (normale)               & 0.437203    & 0.423355    \\ \hline
+%         P2 (pointeur)              & 0.437227    & 0.423262    \\ \hline
+%         P3 (tempo)                 & 0.437231    & 0.423260    \\ \hline
+%         P4 (unrol)                 & 0.434496    & 0.425146    \\ \hline
+%     \end{tabularx}
+% \end{table}
+
+% \end{document}
+
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -6,8 +82,13 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{xcolor}
+\usepackage{amsmath}
 
 \begin{document}
+
+\section*{Exercice 3 : Analyse des Performances de la Hiérarchie Mémoire}
+
+\subsection*{Q1.Configurer le simulateur gem5 avec deux hiérarchies de caches différentes (C1 et C2) et extraire les taux de défauts (Miss Rates) pour l'Instruction Cache (L1I), le Data Cache (L1D) et le cache unifié de niveau 2 (L2).}
 
 % --- Tableau 8 ---
 \begin{table}[h]
@@ -17,12 +98,14 @@
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{3}{>{\centering\arraybackslash}X|}}
         \hline
         \textbf{Configuration} & \textbf{IL1} & \textbf{DL1} & \textbf{UL2} \\ \hline
-        C1 & & & \\ \hline
-        C2 & & & \\ \hline
+        C1 & 4kB, DM (assoc=1) & 4kB, DM (assoc=1) & 32kB, DM (assoc=1) \\ \hline
+        C2 & 4kB, DM (assoc=1) & 4kB, 2-way (assoc=2) & 32kB, 4-way (assoc=4) \\ \hline
     \end{tabularx}
 \end{table}
 
-\vspace{2cm} 
+\vspace{1cm} 
+
+\subsection*{Q2. Remplir les tableaux de mesures pour les différents programmes fournis (P1 à P4).}
 
 % --- Tableau 9 ---
 \begin{table}[h]
@@ -71,5 +154,17 @@
         P4 (unrol)                 & 0.434496    & 0.425146    \\ \hline
     \end{tabularx}
 \end{table}
+
+\subsection*{Q3. Analysez les résultats obtenus. Pourquoi observe-t-on des variations de performance entre C1 et C2 ? Quel est l'impact de l'associativité sur les taux de défauts observés ?}
+
+D'après les résultats obtenus dans les Tableaux 9, 10 et 11, nous pouvons tirer les conclusions suivantes :
+
+\begin{enumerate}
+    \item \textbf{Analyse de l'IL1 :} Le taux de défauts reste identique entre C1 et C2. Cela s'explique par le fait que la configuration de l'IL1 n'a pas été modifiée (4kB, Direct Mapped dans les deux cas).
+    
+    \item \textbf{Analyse de la DL1 :} On observe une légère augmentation du Miss Rate en C2 (2-way) par rapport à C1 (DM) pour certains programmes. Bien que l'associativité réduise normalement les défauts de conflit, dans des caches de très petite taille (4kB), l'algorithme de remplacement (LRU) peut parfois évincer des données utiles prématurément par rapport à un mapping direct, ou la structure de l'accès aux données des boucles favorise un mapping fixe.
+    
+    \item \textbf{Analyse de l'UL2 :} L'augmentation de l'associativité (de DM à 4-way) dans le cache L2 de 32kB montre une amélioration systématique (baisse du Miss Rate) pour C2. Cela démontre que pour un cache de second niveau recevant des flux de données et d'instructions, une associativité plus élevée est cruciale pour réduire les défauts de conflit entre les blocs provenant de la L1I et de la L1D.
+\end{enumerate}
 
 \end{document}
