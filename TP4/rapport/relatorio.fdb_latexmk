@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1770634201.15194 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1770634201.55097 0
+["pdflatex"] 1770640724.37109 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1770640724.69763 0
   "/etc/texmf/web2c/texmf.cnf" 1770211485.90741 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk" 1770634199.51797 25396 1ea6c0703dfa24cfcbffcdff3a1d1285 ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk" 1770634201.04495 25076 b0f1dd1a3e83b48d9955d70bc2bdec21 ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk" 1770634200.27896 23784 bce26339e04848f2b02506dda896739d ""
-  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1770634198.19028 1483 378df8a96a53d93f5e2511e518a57c13 ""
+  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1770640724.10684 3028 88183c54ad6740b2aa56f53cd387283f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1000.tfm" 1136768653 3072 0e825b3b77feef5bf88d50fba1209c90 ""
@@ -33,8 +33,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1770481085.45906 128067 403859e4d35fdff4c458758f0e5ea400 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1770481098 6808170 a054936d137166067201d1abb24e8fe9 ""
-  "relatorio.aux" 1770634201.51095 474 e17ef3ef368ed0b52a365a60c5e6b169 "pdflatex"
-  "relatorio.tex" 1770634198.19028 1483 378df8a96a53d93f5e2511e518a57c13 ""
+  "relatorio.aux" 1770640724.67122 733 d832e50f4a59cf06b1700de2cd9f4007 "pdflatex"
+  "relatorio.tex" 1770640724.10684 3028 88183c54ad6740b2aa56f53cd387283f ""
   (generated)
   "relatorio.aux"
   "relatorio.log"
