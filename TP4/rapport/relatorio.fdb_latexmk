@@ -1,12 +1,12 @@
 # Fdb version 4
-["pdflatex"] 1770641202.95257 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1770641203.37915 0
+["pdflatex"] 1770736967.07601 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1770736967.46855 0
   "/etc/texmf/web2c/texmf.cnf" 1770211485.90741 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk" 1770634199.51797 25396 1ea6c0703dfa24cfcbffcdff3a1d1285 ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk" 1770481299.28052 31928 511f12367caae9b3ff4c7accc3b3cf9e ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk" 1770481299.59352 40112 4308476e976d71d8334a12ecaef90e90 ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk" 1770634201.04495 25076 b0f1dd1a3e83b48d9955d70bc2bdec21 ""
   "/home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk" 1770634200.27896 23784 bce26339e04848f2b02506dda896739d ""
-  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1770641202.67582 8210 b17fb0837c26a4d2b6d9a2b5bdc33fd3 ""
+  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1770736966.77515 6720 4f7f37d60e9b96addd761c3e8bb68f01 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -45,8 +45,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1770481085.45906 128067 403859e4d35fdff4c458758f0e5ea400 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1770481098 6808170 a054936d137166067201d1abb24e8fe9 ""
-  "relatorio.aux" 1770641203.30748 733 d832e50f4a59cf06b1700de2cd9f4007 "pdflatex"
-  "relatorio.tex" 1770641202.67582 8210 b17fb0837c26a4d2b6d9a2b5bdc33fd3 ""
+  "relatorio.aux" 1770736967.42817 893 9ab27afdfbf48be028c3289b76a0777c "pdflatex"
+  "relatorio.tex" 1770736966.77515 6720 4f7f37d60e9b96addd761c3e8bb68f01 ""
   (generated)
   "relatorio.aux"
   "relatorio.log"
