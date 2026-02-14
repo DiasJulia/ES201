@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  10 FEB 2026 16:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  10 FEB 2026 16:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -241,9 +241,9 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  56i,11n,65p,558b,428s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk>
-Output written on relatorio.pdf (3 pages, 61989 bytes).
+Output written on relatorio.pdf (3 pages, 66410 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
+ 237 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)

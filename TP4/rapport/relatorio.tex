@@ -122,6 +122,17 @@ les valeurs dans un tableau.}
     \end{tabularx}
 \end{table}
 
+\subsection*{Q2. Quelle catégorie d'instructions nécessiterait une amélioration de performances ?
+Expliquez en quelques lignes (max 5 lignes).}
 
+La catégorie la plus critique est MemRead/MemWrite (mémoire), car elle représente une part importante des instructions et subit les latences mémoire. 
+Améliorer cette catégorie (meilleure hiérarchie de caches, prélecture, réduction des accès) aura l’impact le plus direct sur le temps d’exécution. 
+Les IntAlu dominent en volume mais sont déjà rapides, donc moins sensibles.
+
+\subsection*{Q3. Au regard des résultats obtenus lors du TP2, pouvez-vous justifier d’éventuelles
+similitudes/divergences comportementales entre dijkstra, BlowFish, SSCA2-BCS, SHA-1 et le
+produit de polynômes ?}
+
+Dijkstra et Blowfish ont des profils d'instructions similaires (dominance d'IntAlu et MemRead/Write), ce qui explique des comportements de cache comparables.
 
 \end{document}
