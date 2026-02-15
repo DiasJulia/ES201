@@ -46,6 +46,8 @@ def parse_args():
     ap.add_argument("--out", default="", help="juste informatif")
     ap.add_argument("--clock", default="2GHz")
     ap.add_argument("--mem-size", default="2GB")
+    ap.add_argument("--l1i", default="32kB", help="taille cache L1 I (ex: 2kB, 4kB, 8kB)")
+    ap.add_argument("--l1d", default="32kB", help="taille cache L1 D (ex: 2kB, 4kB, 8kB)")
     ap.add_argument("--maxinsts", type=int, default=0)
     return ap.parse_args()
 
@@ -82,18 +84,20 @@ def build_system(args):
 
     # Branch predictor : "2 level", BTB=256
     # En gem5 classic, LocalBP correspond a un 2-level local predictor.
-    system.cpu.branchPred = LocalBP()
-    system.cpu.branchPred.BTBEntries = 256
+    system.cpu.branchPred = BranchPredictor(
+        conditionalBranchPred=LocalBP(),
+        btb=SimpleBTB(numEntries=256),
+    )
 
     # -------- Caches C-A15 --------
     # I-L1: 32KB / 64 / 2
     system.cpu.icache = L1ICache()
-    system.cpu.icache.size = "32kB"
+    system.cpu.icache.size = args.l1i
     system.cpu.icache.assoc = 2
 
     # D-L1: 32KB / 64 / 2
     system.cpu.dcache = L1DCache()
-    system.cpu.dcache.size = "32kB"
+    system.cpu.dcache.size = args.l1d
     system.cpu.dcache.assoc = 2
 
     # L2: 512KB / 64 / 16

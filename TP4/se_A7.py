@@ -41,6 +41,8 @@ def parse_args():
     ap.add_argument("--options", nargs=argparse.REMAINDER, default=[])
     ap.add_argument("--clock", default="2GHz")
     ap.add_argument("--mem-size", default="2GB")
+    ap.add_argument("--l1i", default="32kB", help="taille cache L1 I (ex: 1kB, 2kB, 4kB)")
+    ap.add_argument("--l1d", default="32kB", help="taille cache L1 D (ex: 1kB, 2kB, 4kB)")
     ap.add_argument("--maxinsts", type=int, default=0)
     return ap.parse_args()
 
@@ -80,18 +82,20 @@ def build_system(args):
 
     # Branch predictor : bimodal, BTB=256
     # BiModeBP correspond au "bimodal/bi-mode" cote gem5 classic.
-    system.cpu.branchPred = BiModeBP()
-    system.cpu.branchPred.BTBEntries = 256
+    system.cpu.branchPred = BranchPredictor(
+        conditionalBranchPred=BiModeBP(),
+        btb=SimpleBTB(numEntries=256),
+    )
 
     # -------- Caches C-A7 --------
     # I-L1: 32KB / 32 / 2
     system.cpu.icache = L1ICache()
-    system.cpu.icache.size = "32kB"
+    system.cpu.icache.size = args.l1i
     system.cpu.icache.assoc = 2
 
     # D-L1: 32KB / 32 / 2
     system.cpu.dcache = L1DCache()
-    system.cpu.dcache.size = "32kB"
+    system.cpu.dcache.size = args.l1d
     system.cpu.dcache.assoc = 2
 
     # L2: 512KB / 32 / 8
