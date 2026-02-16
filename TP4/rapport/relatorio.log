@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  10 FEB 2026 16:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  15 FEB 2026 21:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -176,75 +176,165 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks27
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen168
+\Gin@req@width=\dimen169
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count284
+\float@exts=\toks28
+\float@box=\box55
+\@float@everytoks=\toks29
+\@floatcapt=\box56
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen170
+\captionmargin=\dimen171
+\caption@leftmargin=\dimen172
+\caption@rightmargin=\dimen173
+\caption@width=\dimen174
+\caption@indent=\dimen175
+\caption@parindent=\dimen176
+\caption@hangindent=\dimen177
+Package caption Info: Standard document class detected.
+Package caption Info: french babel package is loaded.
+)
+\c@caption@flags=\count285
+\c@continuedfloat=\count286
+Package caption Info: float package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count287
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count288
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count284
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count289
+\l__pdf_internal_box=\box57
 ) (./relatorio.aux)
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Info: Redefining \degres on input line 11.
-LaTeX Info: Redefining \up on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Info: Redefining \degres on input line 20.
+LaTeX Info: Redefining \up on input line 20.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count285
-\scratchdimen=\dimen168
-\scratchbox=\box56
-\nofMPsegments=\count286
-\nofMParguments=\count287
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count288
-\MPscratchDim=\dimen169
-\MPnumerator=\count289
-\makeMPintoPDFobject=\count290
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count290
+\scratchdimen=\dimen178
+\scratchbox=\box58
+\nofMPsegments=\count291
+\nofMParguments=\count292
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count293
+\MPscratchDim=\dimen179
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
+\everyMPtoPDFconversion=\toks31
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 22.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (8.32126pt too wide) in paragraph at lines 102--102
+Overfull \hbox (8.32126pt too wide) in paragraph at lines 113--113
 \T1/cmr/bx/n/14.4 for-mances de dif-fé-rentes confi-gu-ra-tions de mé-moires
  []
 
+[2]
+Overfull \hbox (9.14236pt too wide) in paragraph at lines 154--154
+\T1/cmr/bx/n/12 les confi-gu-ra-tions tes-tées. Ana-ly-sez les ré-sul-tats. Quelle confi-
+ []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+[3]
+<./figures/figures_A7/blowfish_ipc.png, id=20, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/blowfish_ipc.png Graphic file (type png)
+<use ./figures/figures_A7/blowfish_ipc.png>
+Package pdftex.def Info: ./figures/figures_A7/blowfish_ipc.png  used on input line 165.
+(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
+<./figures/figures_A7/dijkstra_ipc.png, id=22, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/dijkstra_ipc.png Graphic file (type png)
+<use ./figures/figures_A7/dijkstra_ipc.png>
+Package pdftex.def Info: ./figures/figures_A7/dijkstra_ipc.png  used on input line 172.
+(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
+<./figures/figures_A7/blowfish_cpi.png, id=23, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/blowfish_cpi.png Graphic file (type png)
+<use ./figures/figures_A7/blowfish_cpi.png>
+Package pdftex.def Info: ./figures/figures_A7/blowfish_cpi.png  used on input line 186.
+(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
+<./figures/figures_A7/dijkstra_cpi.png, id=24, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/dijkstra_cpi.png Graphic file (type png)
+<use ./figures/figures_A7/dijkstra_cpi.png>
+Package pdftex.def Info: ./figures/figures_A7/dijkstra_cpi.png  used on input line 193.
+(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
+ [4 <./figures/figures_A7/blowfish_ipc.png> <./figures/figures_A7/dijkstra_ipc.png>]
+Overfull \hbox (9.14236pt too wide) in paragraph at lines 205--205
+\T1/cmr/bx/n/12 les confi-gu-ra-tions tes-tées. Ana-ly-sez les ré-sul-tats. Quelle confi-
+ []
 
-[2] [3] (./relatorio.aux)
+[5 <./figures/figures_A7/blowfish_cpi.png> <./figures/figures_A7/dijkstra_cpi.png>] (./relatorio.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4385 strings out of 476153
- 67770 string characters out of 5794327
- 1939975 words of memory out of 5000000
- 26391 multiletter control sequences out of 15000+600000
- 563818 words of font info for 45 fonts, out of 8000000 for 9000
+ 6326 strings out of 476153
+ 104757 string characters out of 5794327
+ 1938975 words of memory out of 5000000
+ 28285 multiletter control sequences out of 15000+600000
+ 569074 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,11n,65p,558b,428s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk>
-Output written on relatorio.pdf (3 pages, 66410 bytes).
+ 67i,11n,77p,558b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
+Output written on relatorio.pdf (5 pages, 219061 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 346 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

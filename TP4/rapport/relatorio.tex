@@ -7,8 +7,19 @@
 \usepackage{multirow}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+
+\title{TP4 : Architecture des microprocesseurs}
+\author{
+    Júlia Ellen Dias Leite \\
+    \texttt{julia-ellen@ensta-paris.fr}
+}
 
 \begin{document}
+
+\maketitle
 
 \section*{Exercice 3 : Analyse des Performances de la Hiérarchie Mémoire}
 
@@ -104,6 +115,8 @@ configurations de mémoires caches (instructions et données)}
 \subsection*{Q1. Générez le pourcentage de chaque classe d'instructions de ces applications et remplissez
 les valeurs dans un tableau.}
 
+Pour générer le pourcentage de chaque classe d'instructions, nous avons utilisé les statistiques de performance extraites du simulateur gem5 pour les applications Blowfish et Dijkstra. Les classes d'instructions sont regroupées en catégories telles que IntAlu, IntMult, IntDiv, MemRead, MemWrite, FloatMemWrite, et No\_OpClass.
+
 % --- Tableau Q1 ---
 \begin{table}[h]
     \centering
@@ -134,5 +147,64 @@ similitudes/divergences comportementales entre dijkstra, BlowFish, SSCA2-BCS, SH
 produit de polynômes ?}
 
 Dijkstra et Blowfish ont des profils d'instructions similaires (dominance d'IntAlu et MemRead/Write), ce qui explique des comportements de cache comparables.
+
+\subsection*{Q4 : Générez les figures de performances détaillées (performance générale, IPC, hiérarchie
+mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1 pour les
+configurations testées. Analysez les résultats. Quelle configuration de L1 donne les meilleures
+performances pour le Cortex A7 pour les applications sélectionnées ?}
+
+Pour analyser les performances du Cortex A7 avec les différentes tailles de cache L1, nous avons généré des figures détaillées pour l'IPC (Instructions Par Cycle) et le CPI (Cycles Par Instruction) pour les applications Blowfish et Dijkstra.
+
+% Incluir aqui as imagens que tão em figures/figures_A7 para cada configuração de cache L1 (C1 e C2) e para cada aplicação (Blowfish, Dijkstra, etc.).
+La metrique de l'IPC (Instructions Par Cycle) est un indicateur clé de la performance d'un processeur, mesurant le nombre d'instructions exécutées par cycle d'horloge.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_ipc.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_ipc}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_ipc.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_ipc}
+\end{subfigure}
+\caption{IPC sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:ipc_a7}
+\end{figure}
+
+La metrique du CPI (Cycles Par Instruction) est également cruciale, car elle indique le nombre de cycles d'horloge nécessaires pour exécuter une instruction. Un CPI plus bas signifie une meilleure performance.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_cpi.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_cpi}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_cpi.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_cpi}
+\end{subfigure}
+\caption{cpi sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:cpi_a7}
+\end{figure}
+
+
+\subsection*{Q5 : Générez les figures de performances détaillées (performance générale, IPC, hiérarchie
+mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1 pour les
+configurations testées. Analysez les résultats. Quelle configuration de L1 donne les
+meilleures performances pour le Cortex A15 pour les applications sélectionnées ?}
+
+% Incluir aqui as imagens que tão em figures/figures_A15 para cada configuração de cache L1 (C1 e C2) e para cada aplicação (Blowfish, Dijkstra, etc.).
+% Analisar os resultados e comparar o desempenho entre as configurações de cache L1 para o Cortex A15, destacando qual configuração oferece melhor desempenho para cada aplicação.
 
 \end{document}
