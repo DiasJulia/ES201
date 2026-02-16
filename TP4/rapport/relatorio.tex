@@ -1,15 +1,17 @@
-\documentclass{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel} % Define o idioma do documento para francês
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{multirow}
-\usepackage{xcolor}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{subcaption}
+\usepackage[french]{babel}
+\usepackage[margin=2cm]{geometry} 
+\usepackage{array, tabularx, booktabs, multirow}
+\usepackage[table,dvipsnames]{xcolor} 
+\usepackage{amsmath, graphicx, float, subcaption}
+\usepackage{titlesec} 
+\usepackage{palatino} 
+\usepackage[scaled]{helvet}
+
+\titleformat{\section}{\Large\bfseries\sffamily\color{MidnightBlue}}{\thesection}{1em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\sffamily\color{RoyalBlue}}{\thesubsection}{1em}{}
 
 \title{TP4 : Architecture des microprocesseurs}
 \author{
@@ -112,6 +114,8 @@ D'après les résultats obtenus dans les Tableaux 9, 10 et 11, nous pouvons tire
 \section*{Exercice 4 : Mémoires caches - Evaluation des performances de différentes
 configurations de mémoires caches (instructions et données)}
 
+L'objectif principal est la caractérisation détaillée de deux cœurs distincts : le Cortex-A7 (cœur à haut rendement et à exécution séquentielle) et le Cortex-A15 (cœur à hautes performances et à exécution déséquilibrée), à l'aide du simulateur d'architecture gem5 et de l'outil de modélisation physique CACTI.
+
 \subsection*{Q1. Générez le pourcentage de chaque classe d'instructions de ces applications et remplissez
 les valeurs dans un tableau.}
 
@@ -204,7 +208,42 @@ mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1
 configurations testées. Analysez les résultats. Quelle configuration de L1 donne les
 meilleures performances pour le Cortex A15 pour les applications sélectionnées ?}
 
-% Incluir aqui as imagens que tão em figures/figures_A15 para cada configuração de cache L1 (C1 e C2) e para cada aplicação (Blowfish, Dijkstra, etc.).
-% Analisar os resultados e comparar o desempenho entre as configurações de cache L1 para o Cortex A15, destacando qual configuração oferece melhor desempenho para cada aplicação.
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_ipc.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_ipc}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_ipc.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_ipc}
+\end{subfigure}
+\caption{IPC sur Cortex A15 avec différentes configurations de cache L1}
+\label{fig:ipc_a15}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_cpi.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_cpi}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_cpi.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_cpi}
+\end{subfigure}
+\caption{cpi sur Cortex A15 avec différentes configurations de cache L1}
+\label{fig:cpi_A15}
+\end{figure}
 
 \end{document}

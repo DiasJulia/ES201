@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  15 FEB 2026 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  16 FEB 2026 09:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count187
 \c@section=\count188
@@ -70,30 +70,68 @@ Package babel Info: Importing font and identification data for french
 ) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count270
+\Gm@cntv=\count271
+\c@Gm@tempcnt=\count272
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen151
+\col@sep=\dimen159
 \ar@mcellbox=\box51
-\extrarowheight=\dimen152
-\NC@list=\toks21
+\extrarowheight=\dimen160
+\NC@list=\toks22
 \extratabsurround=\skip50
 \backup@length=\skip51
 \ar@cellbox=\box52
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen153
-\TX@old@table=\dimen154
-\TX@old@col=\dimen155
-\TX@target=\dimen156
-\TX@delta=\dimen157
-\TX@cols=\count270
-\TX@ftn=\toks22
+\TX@col@width=\dimen161
+\TX@old@table=\dimen162
+\TX@old@col=\dimen163
+\TX@target=\dimen164
+\TX@delta=\dimen165
+\TX@cols=\count273
+\TX@ftn=\toks23
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen166
+\lightrulewidth=\dimen167
+\cmidrulewidth=\dimen168
+\belowrulesep=\dimen169
+\belowbottomsep=\dimen170
+\aboverulesep=\dimen171
+\abovetopsep=\dimen172
+\cmidrulesep=\dimen173
+\cmidrulekern=\dimen174
+\defaultaddspace=\dimen175
+\@cmidla=\count274
+\@cmidlb=\count275
+\@aboverulesep=\dimen176
+\@belowrulesep=\dimen177
+\@thisruleclass=\count276
+\@lastruleclass=\count277
+\@thisrulewidth=\dimen178
 ) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip52
-\multirow@cntb=\count271
+\multirow@cntb=\count278
 \multirow@dima=\skip53
-\bigstrutjot=\dimen158
+\bigstrutjot=\dimen179
 ) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -112,31 +150,38 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks24
+\minrowclearance=\skip54
+\rownum=\count279
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
-\@mathmargin=\skip54
+\@mathmargin=\skip55
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks23
-\ex@=\dimen159
+\@emptytoks=\toks25
+\ex@=\dimen180
 )) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen160
+\pmbraise@=\dimen181
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count272
+\inf@bad=\count280
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count273
-\leftroot@=\count274
+\uproot@=\count281
+\leftroot@=\count282
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count275
-\DOTSCASE@=\count276
+\classnum@=\count283
+\DOTSCASE@=\count284
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -146,34 +191,34 @@ LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen161
+\big@size=\dimen182
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count277
+\macc@depth=\count285
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count278
+\c@MaxMatrixCols=\count286
 \dotsspace@=\muskip16
-\c@parentequation=\count279
-\dspbrk@lvl=\count280
-\tag@help=\toks24
-\row@=\count281
-\column@=\count282
-\maxfields@=\count283
-\andhelp@=\toks25
-\eqnshift@=\dimen162
-\alignsep@=\dimen163
-\tagshift@=\dimen164
-\tagwidth@=\dimen165
-\totwidth@=\dimen166
-\lineht@=\dimen167
-\@envbody=\toks26
-\multlinegap=\skip55
-\multlinetaggap=\skip56
-\mathdisplay@stack=\toks27
+\c@parentequation=\count287
+\dspbrk@lvl=\count288
+\tag@help=\toks26
+\row@=\count289
+\column@=\count290
+\maxfields@=\count291
+\andhelp@=\toks27
+\eqnshift@=\dimen183
+\alignsep@=\dimen184
+\tagshift@=\dimen185
+\tagwidth@=\dimen186
+\totwidth@=\dimen187
+\lineht@=\dimen188
+\@envbody=\toks28
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks29
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -187,14 +232,14 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen168
-\Gin@req@width=\dimen169
+\Gin@req@height=\dimen189
+\Gin@req@width=\dimen190
 ) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count284
-\float@exts=\toks28
+\c@float@type=\count292
+\float@exts=\toks30
 \float@box=\box55
-\@float@everytoks=\toks29
+\@float@everytoks=\toks31
 \@floatcapt=\box56
 ) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
@@ -202,61 +247,140 @@ Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen170
-\captionmargin=\dimen171
-\caption@leftmargin=\dimen172
-\caption@rightmargin=\dimen173
-\caption@width=\dimen174
-\caption@indent=\dimen175
-\caption@parindent=\dimen176
-\caption@hangindent=\dimen177
+\caption@tempdima=\dimen191
+\captionmargin=\dimen192
+\caption@leftmargin=\dimen193
+\caption@rightmargin=\dimen194
+\caption@width=\dimen195
+\caption@indent=\dimen196
+\caption@parindent=\dimen197
+\caption@hangindent=\dimen198
 Package caption Info: Standard document class detected.
 Package caption Info: french babel package is loaded.
 )
-\c@caption@flags=\count285
-\c@continuedfloat=\count286
+\c@caption@flags=\count293
+\c@continuedfloat=\count294
 Package caption Info: float package is loaded.
 )
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count287
+\c@subfigure=\count295
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count288
+\c@subtable=\count296
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box57
+\beforetitleunit=\skip58
+\aftertitleunit=\skip59
+\ttl@plus=\dimen199
+\ttl@minus=\dimen256
+\ttl@toksa=\toks32
+\titlewidth=\dimen257
+\titlewidthlast=\dimen258
+\titlewidthfirst=\dimen259
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/palatino.sty
+Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 22.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count289
-\l__pdf_internal_box=\box57
-) (./relatorio.aux)
+\l__color_backend_stack_int=\count297
+\l__pdf_internal_box=\box58
+) (./relatorio.aux
+
+LaTeX Warning: Label `fig:blowfish_ipc' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:blowfish_ipc' multiply defined.
+
+
+LaTeX Warning: Label `fig:dijkstra_ipc' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:dijkstra_ipc' multiply defined.
+
+
+LaTeX Warning: Label `fig:blowfish_cpi' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:blowfish_cpi' multiply defined.
+
+
+LaTeX Warning: Label `fig:dijkstra_cpi' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:dijkstra_cpi' multiply defined.
+
+)
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Info: Redefining \degres on input line 20.
-LaTeX Info: Redefining \up on input line 20.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Info: Redefining \degres on input line 22.
+LaTeX Info: Redefining \up on input line 22.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count290
-\scratchdimen=\dimen178
-\scratchbox=\box58
-\nofMPsegments=\count291
-\nofMParguments=\count292
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count293
-\MPscratchDim=\dimen179
-\MPnumerator=\count294
-\makeMPintoPDFobject=\count295
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count298
+\scratchdimen=\dimen260
+\scratchbox=\box59
+\nofMPsegments=\count299
+\nofMParguments=\count300
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count301
+\MPscratchDim=\dimen261
+\MPnumerator=\count302
+\makeMPintoPDFobject=\count303
+\everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -265,76 +389,93 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 22.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 24.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 26.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 26.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 28.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (8.32126pt too wide) in paragraph at lines 113--113
-\T1/cmr/bx/n/14.4 for-mances de dif-fé-rentes confi-gu-ra-tions de mé-moires
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2]
+Overfull \hbox (20.57208pt too wide) in paragraph at lines 153--154
+[]\T1/ppl/m/n/10.95 Dijkstra et Blow-fish ont des pro-fils d'ins-truc-tions si-mi-laires (do-mi-nance d'In-tAlu et Mem-Read/Write),
  []
 
-[2]
-Overfull \hbox (9.14236pt too wide) in paragraph at lines 154--154
-\T1/cmr/bx/n/12 les confi-gu-ra-tions tes-tées. Ana-ly-sez les ré-sul-tats. Quelle confi-
- []
-
-[3]
-<./figures/figures_A7/blowfish_ipc.png, id=20, 462.528pt x 346.896pt>
+<./figures/figures_A7/blowfish_ipc.png, id=13, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/blowfish_ipc.png Graphic file (type png)
 <use ./figures/figures_A7/blowfish_ipc.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_ipc.png  used on input line 165.
-(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
-<./figures/figures_A7/dijkstra_ipc.png, id=22, 462.528pt x 346.896pt>
+Package pdftex.def Info: ./figures/figures_A7/blowfish_ipc.png  used on input line 169.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A7/dijkstra_ipc.png, id=15, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/dijkstra_ipc.png Graphic file (type png)
 <use ./figures/figures_A7/dijkstra_ipc.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_ipc.png  used on input line 172.
-(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
-<./figures/figures_A7/blowfish_cpi.png, id=23, 462.528pt x 346.896pt>
+Package pdftex.def Info: ./figures/figures_A7/dijkstra_ipc.png  used on input line 176.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A7/blowfish_cpi.png, id=16, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/blowfish_cpi.png Graphic file (type png)
 <use ./figures/figures_A7/blowfish_cpi.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_cpi.png  used on input line 186.
-(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
-<./figures/figures_A7/dijkstra_cpi.png, id=24, 462.528pt x 346.896pt>
+Package pdftex.def Info: ./figures/figures_A7/blowfish_cpi.png  used on input line 190.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A7/dijkstra_cpi.png, id=17, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/dijkstra_cpi.png Graphic file (type png)
 <use ./figures/figures_A7/dijkstra_cpi.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_cpi.png  used on input line 193.
-(pdftex.def)             Requested size: 165.59853pt x 124.19963pt.
- [4 <./figures/figures_A7/blowfish_ipc.png> <./figures/figures_A7/dijkstra_ipc.png>]
-Overfull \hbox (9.14236pt too wide) in paragraph at lines 205--205
-\T1/cmr/bx/n/12 les confi-gu-ra-tions tes-tées. Ana-ly-sez les ré-sul-tats. Quelle confi-
- []
-
-[5 <./figures/figures_A7/blowfish_cpi.png> <./figures/figures_A7/dijkstra_cpi.png>] (./relatorio.aux)
+Package pdftex.def Info: ./figures/figures_A7/dijkstra_cpi.png  used on input line 197.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+[3 <./figures/figures_A7/blowfish_ipc.png> <./figures/figures_A7/dijkstra_ipc.png>]
+<./figures/figures_A15/blowfish_ipc.png, id=23, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/blowfish_ipc.png Graphic file (type png)
+<use ./figures/figures_A15/blowfish_ipc.png>
+Package pdftex.def Info: ./figures/figures_A15/blowfish_ipc.png  used on input line 215.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A15/dijkstra_ipc.png, id=24, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/dijkstra_ipc.png Graphic file (type png)
+<use ./figures/figures_A15/dijkstra_ipc.png>
+Package pdftex.def Info: ./figures/figures_A15/dijkstra_ipc.png  used on input line 222.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A15/blowfish_cpi.png, id=25, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/blowfish_cpi.png Graphic file (type png)
+<use ./figures/figures_A15/blowfish_cpi.png>
+Package pdftex.def Info: ./figures/figures_A15/blowfish_cpi.png  used on input line 234.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A15/dijkstra_cpi.png, id=26, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/dijkstra_cpi.png Graphic file (type png)
+<use ./figures/figures_A15/dijkstra_cpi.png>
+Package pdftex.def Info: ./figures/figures_A15/dijkstra_cpi.png  used on input line 241.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+ [4 <./figures/figures_A7/blowfish_cpi.png> <./figures/figures_A7/dijkstra_cpi.png> <./figures/figures_A15/blowfish_ipc.png> <./figures/figures_A15/dijkstra_ipc.png>] [5 <./figures/figures_A15/blowfish_cpi.png> <./figures/figures_A15/dijkstra_cpi.png>] (./relatorio.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 6326 strings out of 476153
- 104757 string characters out of 5794327
- 1938975 words of memory out of 5000000
- 28285 multiletter control sequences out of 15000+600000
- 569074 words of font info for 60 fonts, out of 8000000 for 9000
+ 7598 strings out of 476153
+ 124609 string characters out of 5794327
+ 1942975 words of memory out of 5000000
+ 29512 multiletter control sequences out of 15000+600000
+ 582203 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 67i,11n,77p,558b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/julia/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on relatorio.pdf (5 pages, 219061 bytes).
+ 67i,12n,77p,558b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on relatorio.pdf (5 pages, 321459 bytes).
 PDF statistics:
- 346 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
