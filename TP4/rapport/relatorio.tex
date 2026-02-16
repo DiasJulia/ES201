@@ -17,7 +17,14 @@
 \author{
     Júlia Ellen Dias Leite \\
     \texttt{julia-ellen@ensta-paris.fr}
-}
+    \and
+    Charbel Chahla \\
+    \texttt{charbel.chahla@ensta.fr}
+    \and
+    Martin Brun \\
+    \texttt{martin.brun@ensta.fr}
+    }
+
 
 \begin{document}
 
@@ -32,12 +39,14 @@
     \centering
     \caption{Paramètres de cache pour chaque configuration}
     \vspace{0.5em}
-    \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{3}{>{\centering\arraybackslash}X|}}
-        \hline
-        \textbf{Configuration} & \textbf{IL1} & \textbf{DL1} & \textbf{UL2} \\ \hline
-        C1 & 4kB, DM (assoc=1) & 4kB, DM (assoc=1) & 32kB, DM (assoc=1) \\ \hline
-        C2 & 4kB, DM (assoc=1) & 4kB, 2-way (assoc=2) & 32kB, 4-way (assoc=4) \\ \hline
-    \end{tabularx}
+    \begin{tabular}{l c c c}
+        \toprule
+        \textbf{Configuration} & \textbf{IL1} & \textbf{DL1} & \textbf{UL2} \\
+        \midrule
+        C1 & 4kB, DM (assoc=1) & 4kB, DM (assoc=1) & 32kB, DM (assoc=1) \\
+        C2 & 4kB, DM (assoc=1) & 4kB, 2-way (assoc=2) & 32kB, 4-way (assoc=4) \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 \vspace{1cm} 
@@ -49,15 +58,18 @@
     \centering
     \caption{Instruction Cache (il1) Miss Rate}
     \vspace{0.5em}
-    \begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{2}{>{\centering\arraybackslash}X|}}
-        \hline
-        \multirow{2}{*}{\textbf{Programmes}} & \multicolumn{2}{c|}{\textbf{\textcolor{blue}{Configurations de caches}}} \\ \cline{2-3} 
-                                   & \textbf{C1} & \textbf{C2} \\ \hline
-        P1 (normale)               & 0.000119    &  0.000119   \\ \hline
-        P2 (pointeur)              & 0.000089    &  0.000089   \\ \hline
-        P3 (tempo)                 & 0.000123    &  0.000123   \\ \hline
-        P4 (unrol)                 & 0.000141    &  0.000141   \\ \hline
-    \end{tabularx}
+    \begin{tabular}{l c c}
+        \toprule
+        \textbf{Programmes} & \multicolumn{2}{c}{\textbf{Configurations de caches}} \\
+        \cmidrule(lr){2-3}
+                                   & \textbf{C1} & \textbf{C2} \\
+        \midrule
+        P1 (normale)               & 0.000119    &  0.000119   \\
+        P2 (pointeur)              & 0.000089    &  0.000089   \\
+        P3 (tempo)                 & 0.000123    &  0.000123   \\
+        P4 (unrol)                 & 0.000141    &  0.000141   \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 % --- Tableau 10 ---
@@ -65,15 +77,18 @@
     \centering
     \caption{Data Cache (dl1) Miss Rate}
     \vspace{0.5em}
-    \begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{2}{>{\centering\arraybackslash}X|}}
-        \hline
-        \multirow{2}{*}{\textbf{Programmes}} & \multicolumn{2}{c|}{\textbf{\textcolor{blue}{Configurations de caches}}} \\ \cline{2-3} 
-                                   & \textbf{C1} & \textbf{C2} \\ \hline
-        P1 (normale)               &  0.298316   & 0.306917    \\ \hline
-        P2 (pointeur)              &  0.299729   & 0.308452    \\ \hline
-        P3 (tempo)                 &  0.299724   & 0.308445    \\ \hline
-        P4 (unrol)                 &  0.300090   & 0.305467    \\ \hline
-    \end{tabularx}
+    \begin{tabular}{l c c}
+        \toprule
+        \textbf{Programmes} & \multicolumn{2}{c}{\textbf{Configurations de caches}} \\
+        \cmidrule(lr){2-3}
+                                   & \textbf{C1} & \textbf{C2} \\
+        \midrule
+        P1 (normale)               &  0.298316   & 0.306917    \\
+        P2 (pointeur)              &  0.299729   & 0.308452    \\
+        P3 (tempo)                 &  0.299724   & 0.308445    \\
+        P4 (unrol)                 &  0.300090   & 0.305467    \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 % --- Tableau 11 ---
@@ -81,15 +96,18 @@
     \centering
     \caption{Unified Cache (ul2) Miss Rate}
     \vspace{0.5em}
-    \begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}m{3cm}|*{2}{>{\centering\arraybackslash}X|}}
-        \hline
-        \multirow{2}{*}{\textbf{Programmes}} & \multicolumn{2}{c|}{\textbf{\textcolor{blue}{Configurations de caches}}} \\ \cline{2-3} 
-                                   & \textbf{C1} & \textbf{C2} \\ \hline
-        P1 (normale)               & 0.437203    & 0.423355    \\ \hline
-        P2 (pointeur)              & 0.437227    & 0.423262    \\ \hline
-        P3 (tempo)                 & 0.437231    & 0.423260    \\ \hline
-        P4 (unrol)                 & 0.434496    & 0.425146    \\ \hline
-    \end{tabularx}
+    \begin{tabular}{l c c}
+        \toprule
+        \textbf{Programmes} & \multicolumn{2}{c}{\textbf{Configurations de caches}} \\
+        \cmidrule(lr){2-3}
+                                   & \textbf{C1} & \textbf{C2} \\
+        \midrule
+        P1 (normale)               & 0.437203    & 0.423355    \\
+        P2 (pointeur)              & 0.437227    & 0.423262    \\
+        P3 (tempo)                 & 0.437231    & 0.423260    \\
+        P4 (unrol)                 & 0.434496    & 0.425146    \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 \subsection*{Q3. Analysez les résultats obtenus. Pourquoi observe-t-on des variations de performance entre C1 et C2 ? Quel est l'impact de l'associativité sur les taux de défauts observés ?}
@@ -103,7 +121,6 @@ D'après les résultats obtenus dans les Tableaux 9, 10 et 11, nous pouvons tire
     
     \item \textbf{Analyse de l'UL2 :} L'augmentation de l'associativité (de DM à 4-way) dans le cache L2 de 32kB montre une amélioration systématique (baisse du Miss Rate) pour C2. Cela démontre que pour un cache de second niveau recevant des flux de données et d'instructions, une associativité plus élevée est cruciale pour réduire les défauts de conflit entre les blocs provenant de la L1I et de la L1D.
 \end{enumerate}
-
 \section*{Exercice 4 : Mémoires caches - Evaluation des performances de différentes
 configurations de mémoires caches (instructions et données)}
 
@@ -121,17 +138,19 @@ Pour générer le pourcentage de chaque classe d'instructions, nous avons utilis
     \centering
     \caption{Pourcentage par classe d'instructions (blowfish, dijkstra)}
     \vspace{0.5em}
-    \begin{tabularx}{0.9\textwidth}{|>{\centering\arraybackslash}m{4cm}|*{2}{>{\centering\arraybackslash}X|}}
-        \hline
-        \textbf{Classe} & \textbf{Blowfish} & \textbf{Dijkstra} \\ \hline
-        IntAlu & 65.48\% & 63.95\% \\ \hline
-        IntMult & 0.00\% & 3.30\% \\ \hline
-        IntDiv & 0.00\% & 0.00\% \\ \hline
-        MemRead & 22.51\% & 22.38\% \\ \hline
-        MemWrite & 12.01\% & 10.36\% \\ \hline
-        FloatMemWrite & 0.00\% & 0.00\% \\ \hline
-        No\_OpClass & 0.00\% & 0.00\% \\ \hline
-    \end{tabularx}
+    \begin{tabular}{l c c}
+        \toprule
+        \textbf{Classe} & \textbf{Blowfish} & \textbf{Dijkstra} \\
+        \midrule
+        IntAlu & 65.48\% & 63.95\% \\
+        IntMult & 0.00\% & 3.30\% \\
+        IntDiv & 0.00\% & 0.00\% \\
+        MemRead & 22.51\% & 22.38\% \\
+        MemWrite & 12.01\% & 10.36\% \\
+        FloatMemWrite & 0.00\% & 0.00\% \\
+        No\_OpClass & 0.00\% & 0.00\% \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 \subsection*{Q2. Quelle catégorie d'instructions nécessiterait une amélioration de performances ?
@@ -167,25 +186,26 @@ performances pour le Cortex A7 pour les applications sélectionnées ?}
   \centering
   \caption{Synthèse des métriques pour différentes tailles de cache L1 (Cortex A7)}
   \vspace{0.5em}
-  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{2.2cm}|>{\centering\arraybackslash}m{2.2cm}|*{6}{>{\centering\arraybackslash}X|}}
-    \hline
+  \footnotesize
+  \begin{tabular}{l c c c c c c c}
+    \toprule
     \textbf{Prog.} & \textbf{Taille L1} & \textbf{IPC} & \textbf{CPI} & \textbf{I-Miss (\%)} & \textbf{D-Miss (\%)} & \textbf{L2-Miss (\%)} & \textbf{Br. Misp (\%)} \\
-    \hline
+    \midrule
     \multirow{5}{*}{Blowfish}
     & 1kB  & 0.20 & 5.04 & 54.98 & 49.23 & 4.32  & 3.83 \\
     & 2kB  & 0.21 & 4.87 & 2.73  & 41.00 & 8.42  & 3.83 \\
     & 4kB  & 0.22 & 4.56 & 2.40  & 27.46 & 12.33 & 3.82 \\
     & 8kB  & 0.25 & 3.97 & 2.04  & 5.79  & 58.98 & 3.82 \\
     & 16kB & 0.25 & 3.97 & 1.88  & 5.73  & 60.48 & 3.82 \\
-    \hline
+    \midrule
     \multirow{5}{*}{Dijkstra}
     & 1kB  & 0.23 & 4.32 & 14.17 & 23.61 & 0.10  & 1.99 \\
     & 2kB  & 0.24 & 4.14 & 12.11 & 17.50 & 0.13  & 1.99 \\
     & 4kB  & 0.25 & 3.95 & 5.59  & 13.10 & 0.19  & 1.98 \\
     & 8kB  & 0.28 & 3.63 & 0.52  & 6.14  & 0.49  & 1.99 \\
     & 16kB & 0.28 & 3.54 & 0.03  & 4.12  & 0.77  & 1.98 \\
-    \hline
-  \end{tabularx}
+    \bottomrule
+  \end{tabular}
 \end{table}
 
 \textbf{Analyse des résultats :}
@@ -246,9 +266,9 @@ D'après les résultats obtenus, on observe que :
     
     \item \textbf{Cache de données (L1D)} : Les deux applications montrent une forte sensibilité à la taille du cache de données. Blowfish atteint un minimum à 8kB (5.79\%), tandis que Dijkstra continue à bénéficier de tailles plus grandes (4.12\% à 16kB). Ceci reflète des patterns d'accès mémoire différents entre les deux workloads.
     
-    \item \textbf{Cache L2} : Fait intéressant, le taux de défauts L2 de Blowfish \textit{augmente} avec la taille du L1 (de 4.32\% à 60.48\%). Cela s'explique par le fait qu'un L1 plus grand capture plus de défauts, mais ceux qui passent au L2 sont plus difficiles à satisfaire (working set total > L2). Dijkstra maintient un très faible taux L2 (< 1\%), indiquant une bonne localité spatiale.
+    \item \textbf{Cache L2} : Le taux de défauts L2 de Blowfish augmente avec la taille du L1. Cela s'explique par le fait qu'un L1 plus grand capture plus de défauts, mais ceux qui passent au L2 sont plus difficiles à satisfaire.
     
-    \item \textbf{Prédiction de branchement} : Le taux reste stable (~3.82\% pour Blowfish, ~1.99\% pour Dijkstra) indépendamment de la taille du cache, ce qui est attendu car la prédiction dépend uniquement du prédicteur BiMode et non de la hiérarchie mémoire.
+    \item \textbf{Prédiction de branchement} : Le taux reste stable indépendamment de la taille du cache, ce qui est attendu car la prédiction dépend uniquement du prédicteur BiMode et non de la hiérarchie mémoire.
 \end{itemize}
 
 \textbf{Conclusion :} Pour le Cortex A7, la configuration \textbf{8kB} offre le meilleur compromis performance/surface pour les deux applications. Au-delà, les gains marginaux ne justifient pas l'augmentation de la surface du cache.
@@ -258,7 +278,32 @@ mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1
 configurations testées. Analysez les résultats. Quelle configuration de L1 donne les
 meilleures performances pour le Cortex A15 pour les applications sélectionnées ?}
 
-\textbf{Analyse des résultats :}
+\begin{table}[H]
+    \centering
+    \caption{Résumé des performances en fonction de la taille du cache L1 (Cortex A15)}
+    \vspace{0.5em}
+    \footnotesize
+    \begin{tabular}{l c c c c c c c}
+        \toprule
+        \textbf{Prog.} & \textbf{Taille L1} & \textbf{IPC} & \textbf{CPI} & \textbf{I-Miss (\%)} & \textbf{D-Miss (\%)} & \textbf{L2-Miss (\%)} & \textbf{Br. Mispred (\%)} \\
+        \midrule
+        \multirow{5}{*}{Blowfish} 
+        & 2kB  & 0.68 & 1.47 & 2.54  & 49.84 & 5.52  & 5.43 \\
+        & 4kB  & 0.71 & 1.40 & 2.23  & 33.92 & 7.94  & 5.43 \\
+        & 8kB  & 0.90 & 1.12 & 1.82  & 8.77  & 44.68 & 5.43 \\
+        & 16kB & 0.90 & 1.11 & 1.58  & 8.71  & 46.12 & 5.41 \\
+        & 32kB & 0.95 & 1.05 & 1.51  & 4.34  & 95.43 & 5.41 \\
+        \midrule
+        \multirow{5}{*}{Dijkstra} 
+        & 2kB  & 0.64 & 1.55 & 15.72 & 16.93 & 0.09 & 2.86 \\
+        & 4kB  & 0.72 & 1.38 & 10.07 & 12.05 & 0.12 & 2.92 \\
+        & 8kB  & 0.94 & 1.06 & 1.19  & 5.57  & 0.31 & 2.86 \\
+        & 16kB & 1.01 & 0.99 & 0.42  & 3.63  & 0.50 & 2.94 \\
+        & 32kB & 1.14 & 0.88 & 0.02  & 1.09  & 1.81 & 2.94 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:perf_summary_a15}
+\end{table}
 
 Les figures ci-dessous présentent l'évolution des métriques de performance en fonction de la taille du cache L1 pour les applications Blowfish et Dijkstra sur le Cortex A15.
 
@@ -316,14 +361,15 @@ D'après les résultats obtenus pour le Cortex A15, on observe que :
     
     \item \textbf{Cache de données (L1D)} : Le A15 montre une sensibilité accrue à la taille du cache de données. Pour Dijkstra, le taux de défauts continue à diminuer même à 32kB, indiquant que le working set dépasse largement 16kB. Ceci s'explique par le fait que le A15 peut maintenir plus d'instructions en vol (deeper reorder buffer), générant plus d'accès mémoire parallèles.
     
-    \item \textbf{Cache L2} : Contrairement au A7, le taux de défauts L2 pour Blowfish reste relativement stable ou diminue légèrement avec l'augmentation du L1. Le cache L2 du A15 (2MB dans la configuration réelle ARM) est beaucoup plus grand que celui du A7, ce qui explique cette différence de comportement.
+    \item \textbf{Cache L2} : Le taux de défauts L2 pour Blowfish reste relativement stable ou diminue légèrement avec l'augmentation du L1. Le cache L2 du A15 (2MB dans la configuration réelle ARM) est beaucoup plus grand que celui du A7, ce qui explique cette différence de comportement.
     
     \item \textbf{Prédiction de branchement} : Comme pour le A7, les taux restent stables et indépendants de la taille du cache. On note cependant que les taux absolus sont similaires entre A7 et A15 pour les mêmes applications, confirmant que c'est principalement une propriété du workload et de l'algorithme de prédiction.
 \end{itemize}
 
 \textbf{Conclusion :} Pour le Cortex A15, la configuration optimale dépend du trade-off performance/coût souhaité. La configuration \textbf{16kB} offre un excellent équilibre, avec des performances proches du maximum (32kB) mais une surface réduite. Pour des applications critiques en performance comme Dijkstra, \textbf{32kB} peut se justifier pour obtenir les derniers gains de performance.
 
-\subsection*{\textit{Efficacité surfacique}}
+
+\subsection*{\textit{Efficacité surfacique - Cacti65}}
 
 \subsection*{Q6. Paramètres par défaut du fichier \texttt{cache.cfg}}
 
@@ -334,6 +380,201 @@ L'observation du fichier de configuration \texttt{cache.cfg} montre que les para
     \item \textbf{Associativité} : \texttt{-associativity 2}, soit un cache 2-way ;
     \item \textbf{Technologie} : \texttt{-technology (u) 0.032}. Dans CACTI, la technologie est exprimée en $\mu$m, donc $0.032~\mu m \times 1000 = 32$~nm.
 \end{itemize}
+
+\subsection*{Q7. Surface des caches L1, pourcentage de surface et taille des cœurs hors L1}
+
+Les paramètres du Tableau~12 imposent des caches L1 de 32~kB, associativité 2-way, en technologie 32~nm. 
+Avec CACTI, la surface d'un cache est obtenue via \textit{Cache height x width}.
+
+\paragraph{Cortex-A7 (bloc 32~B).}
+CACTI donne \textit{Cache height x width} = $0.265667 \times 0.174962$~mm, donc :
+\[
+A_{L1}(A7)=0.265667 \times 0.174962 \simeq 0.04648\ \text{mm}^2.
+\]
+Les caches L1I et L1D ayant la même configuration, on a :
+\[
+A_{L1I}(A7)\simeq A_{L1D}(A7)\simeq 0.04648\ \text{mm}^2,
+\qquad
+A_{L1,\text{tot}}(A7)=2A_{L1}(A7)\simeq 0.09296\ \text{mm}^2.
+\]
+La surface totale donnée pour le Cortex-A7 (L1 inclus) est $A_{\text{tot}}=0.45\ \text{mm}^2$, donc :
+\[
+\%L1(A7)=\frac{A_{L1,\text{tot}}(A7)}{A_{\text{tot}}}\times 100
+=\frac{0.09296}{0.45}\times 100 \simeq 20.66\%.
+\]
+La surface du cœur \textbf{hors caches L1} vaut alors :
+\[
+A_{\text{core hors L1}}(A7)=A_{\text{tot}}-A_{L1,\text{tot}}(A7)
+=0.45-0.09296\simeq 0.3570\ \text{mm}^2.
+\]
+
+\paragraph{Cortex-A15 (bloc 64~B).}
+CACTI donne \textit{Cache height x width} = $0.265667 \times 0.175632$~mm, donc :
+\[
+A_{L1}(A15)=0.265667 \times 0.175632 \simeq 0.04666\ \text{mm}^2,
+\qquad
+A_{L1,\text{tot}}(A15)=2A_{L1}(A15)\simeq 0.09332\ \text{mm}^2.
+\]
+La surface totale donnée pour le Cortex-A15 (L1 inclus) est $A_{\text{tot}}=2\ \text{mm}^2$, donc :
+\[
+\%L1(A15)=\frac{A_{L1,\text{tot}}(A15)}{A_{\text{tot}}}\times 100
+=\frac{0.09332}{2}\times 100 \simeq 4.67\%.
+\]
+La surface du cœur \textbf{hors caches L1} vaut :
+\[
+A_{\text{core hors L1}}(A15)=2-0.09332\simeq 1.9067\ \text{mm}^2.
+\]
+
+\paragraph{Analyse.}
+Bien que les tailles L1 soient identiques (32~kB pour L1I et L1D), leur impact relatif sur la surface totale est très différent :
+sur le Cortex-A7, les L1 occupent $\sim 20.7\%$ de la surface totale, alors que sur le Cortex-A15 ils n'occupent qu'environ $\sim 4.7\%$. 
+Cela s'explique par le budget de surface beaucoup plus contraint du Cortex-A7 (cœur orienté efficacité), tandis que le Cortex-A15 dispose d'un cœur plus large et plus complexe (orienté performance), ce qui dilue la contribution des L1 dans la surface totale. 
+On observe aussi une légère différence de surface entre A7 (bloc 32~B) et A15 (bloc 64~B), due aux changements d'organisation interne (nombre de lignes, tags, etc.) induits par la taille de bloc.
+
+\subsection*{Q8 : Variation de la taille des caches L1 et impact sur la surface (CACTI)}
+
+Pour cette étude, la technologie utilisée est \textbf{32 nm} (paramètre CACTI : \texttt{-technology (u) 0.032}), conformément à la consigne (28 nm non supporté).
+La surface d’un cache est estimée à partir de la sortie CACTI \texttt{Cache height x width (mm)} :
+\[
+A_{\text{cache}} = H \times W
+\]
+Pour le cache L1, on considère un cache d’instructions et un cache de données de même taille, donc :
+\[
+A_{L1,\text{tot}} = A_{L1I} + A_{L1D} = 2 \times A_{L1}
+\]
+Enfin, la surface totale du cœur incluant le cache L2 (512 kB) est :
+\[
+A_{\text{tot}} = A_{\text{core hors L1}} + A_{L1,\text{tot}} + A_{L2}
+\]
+
+\paragraph{Surface du cache L2 (512 kB).}
+Avec CACTI, nous obtenons \texttt{Cache height x width (mm): 0.355729 x 1.17462}, d’où :
+\[
+A_{L2} = 0.355729 \times 1.17462 \simeq 0.41785~\text{mm}^2
+\]
+
+\paragraph{Cortex A7 : surfaces L1 et surface totale (L2 inclus).}
+Les surfaces hors caches L1 ont été déduites à la question Q7 : $A_{\text{core hors L1}}(A7)=0.3570~\text{mm}^2$.
+
+\begin{table}[H]
+\centering
+\caption{Cortex A7 : surfaces L1 totales et surfaces totales (L2 = 512 kB)}
+\vspace{0.4em}
+\begin{tabular}{c c c c}
+\toprule
+\textbf{Taille L1 (kB)} & \textbf{$A_{L1}$ (mm$^2$)} & \textbf{$A_{L1,\text{tot}}$ (mm$^2$)} & \textbf{$A_{\text{tot}}$ (mm$^2$)} \\
+\midrule
+1  & 0.00522 & 0.01044 & 0.78529 \\
+2  & 0.00754 & 0.01507 & 0.78992 \\
+4  & 0.01661 & 0.03322 & 0.80807 \\
+8  & 0.02513 & 0.05026 & 0.82511 \\
+16 & 0.04648 & 0.09296 & 0.86781 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth]{Q8/Q8_A7_L1tot.png}
+\caption{Cortex A7 : surface L1 totale (L1I + L1D) en fonction de la taille L1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth]{Q8/Q8_A7_total.png}
+\caption{Cortex A7 : surface totale (core hors L1 + L1 + L2) en fonction de la taille L1}
+\end{figure}
+
+\paragraph{Cortex A15 : surfaces L1 et surface totale (L2 inclus).}
+Les surfaces hors caches L1 ont été déduites à la question Q7 : $A_{\text{core hors L1}}(A15)=1.9067~\text{mm}^2$.
+Pour le Cortex A15, nous avons choisi de tester l’intervalle \{2, 8, 16, 32\} kB (variation possible de la taille L1), en conservant les paramètres A15 : bloc 64B, associativité 2-way.
+
+\begin{table}[H]
+\centering
+\caption{Cortex A15 : surfaces L1 totales et surfaces totales (L2 = 512 kB)}
+\vspace{0.4em}
+\begin{tabular}{c c c c}
+\toprule
+\textbf{Taille L1 (kB)} & \textbf{$A_{L1}$ (mm$^2$)} & \textbf{$A_{L1,\text{tot}}$ (mm$^2$)} & \textbf{$A_{\text{tot}}$ (mm$^2$)} \\
+\midrule
+2  & 0.01272 & 0.02545 & 2.34999 \\
+8  & 0.01667 & 0.03333 & 2.35788 \\
+16 & 0.01853 & 0.03706 & 2.36161 \\
+32 & 0.04666 & 0.09332 & 2.41787 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth]{./Q8/Q8_A15_L1tot.png}
+\caption{Cortex A15 : surface L1 totale (L1I + L1D) en fonction de la taille L1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth]{./Q8/Q8_A15_total.png}
+\caption{Cortex A15 : surface totale (core hors L1 + L1 + L2) en fonction de la taille L1}
+\end{figure}
+
+\paragraph{Analyse.}
+Les courbes \emph{L1 totale} et \emph{surface totale} ont des formes similaires car la surface totale ajoute une constante ($A_{\text{core hors L1}} + A_{L2}$) à $A_{L1,\text{tot}}$.
+L’augmentation de la taille de L1 entraîne donc une augmentation monotone de la surface totale.
+L’impact relatif est plus marqué sur le Cortex A7 (cœur compact), tandis que sur le Cortex A15 (plus grand), l’augmentation de surface due à L1 reste proportionnellement plus faible.
+
+\subsection*{Q9 : Efficacité surfacique (IPC / Surface) pour chaque configuration de L1}
+
+On définit l'efficacité surfacique comme :
+\[
+\text{Efficacité surfacique} = \frac{\text{IPC}}{\text{Surface totale (mm}^2\text{)}}
+\]
+
+La surface totale est calculée (pour chaque taille de L1) par :
+\[
+S_{\text{tot}} = S_{\text{coeur hors L1}} + S_{L2} + 2 \times S_{L1}
+\]
+(car L1 = L1I + L1D).
+
+
+\begin{table}[H]
+\centering
+\caption{Efficacité surfacique du Cortex A7 en fonction de la taille de L1 (L2=512kB)}
+\begin{tabular}{c c c c}
+\toprule
+\textbf{Taille L1} & \textbf{IPC} & \textbf{Surface totale (mm$^2$)} & \textbf{IPC/mm$^2$} \\
+\midrule
+1kB  & 0.239769 & 0.852078 & 0.281393 \\
+2kB  & 0.249820 & 0.867519 & 0.287971 \\
+4kB  & 0.259713 & 0.856709 & 0.303152 \\
+8kB  & 0.280162 & 0.874859 & 0.320237 \\
+16kB & 0.286678 & 0.891899 & 0.321424 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Efficacité surfacique du Cortex A15 en fonction de la taille de L1 (L2=512kB)}
+\begin{tabular}{c c c c}
+\toprule
+\textbf{Taille L1} & \textbf{IPC} & \textbf{Surface totale (mm$^2$)} & \textbf{IPC/mm$^2$} \\
+\midrule
+2kB  & 0.671171 & 2.350766 & 0.285512 \\
+4kB  & 0.738432 & 2.339956 & 0.315575 \\
+8kB  & 0.916693 & 2.358107 & 0.388741 \\
+16kB & 0.989433 & 2.375146 & 0.416578 \\
+32kB & 1.109208 & 2.417846 & 0.458759 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Analyse}
+On observe que l'efficacité surfacique augmente globalement avec la taille de L1 pour les deux cœurs.
+Pour le Cortex A7, le gain devient marginal entre 8kB et 16kB, ce qui suggère un compromis optimal autour de 8--16kB.
+Pour le Cortex A15, l'augmentation de L1 améliore fortement l'IPC, et l'efficacité surfacique continue de croître jusqu'à 32kB.
+Ainsi, à surface donnée, les configurations L1 plus grandes restent pertinentes surtout pour le cœur haute performance (A15).
+
 
 \subsection*{\textit{Efficacité énergétique}}
 
@@ -370,13 +611,13 @@ P_{\text{dyn}} = \left(\text{Consommation spécifique en mW/MHz}\right) \times f
 
 \textbf{Conclusion :}
 
-À leur fréquence maximale respective, le Cortex A7 consomme \textbf{100 mW} tandis que le Cortex A15 consomme \textbf{500 mW}. Le A15 consomme donc 5 fois plus de puissance que le A7, ce qui reflète son architecture plus complexe (out-of-order, pipeline plus profond) et sa fréquence d'horloge nettement supérieure. Ce facteur 5 en puissance se justifie par un gain de performance de l'ordre de 30-40\% en IPC, illustrant le trade-off fondamental entre performance et efficacité énergétique dans l'architecture big.LITTLE.
+À leur fréquence maximale respective, le Cortex A7 consomme \textbf{100 mW} tandis que le Cortex A15 consomme \textbf{500 mW}. 
+
+Le A15 consomme donc 5 fois plus de puissance que le A7, ce qui reflète son architecture plus complexe (out-of-order, pipeline plus profond) et sa fréquence d'horloge nettement supérieure. Ce facteur 5 en puissance se justifie par un gain de performance de l'ordre de 30-40\% en IPC, illustrant le trade-off fondamental entre performance et efficacité énergétique dans l'architecture big.LITTLE.
 
 \subsection*{Q11 : Avec le même protocole que précédemment, et en prenant en compte les deux
 dimensions (énergie et surface) pour les deux processeurs considérés, donnez pour chaque
 configuration de L1 l’efficacité énergétique de chaque processeur (à fréquence maximale).}
-
-\textbf{Définition et motivation :}
 
 L'efficacité énergétique d'un processeur représente sa capacité à livrer de la performance tout en consommant le moins de puissance possible. Elle est exprimée par le ratio :
 
@@ -386,77 +627,31 @@ L'efficacité énergétique d'un processeur représente sa capacité à livrer d
 
 Cette métrique, exprimée en instructions par cycle par milliwatt (IPC/mW), permet de comparer l'efficacité relative des deux cœurs indépendamment de leurs différentes fréquences et architectures. Elle est particulièrement importante dans les systèmes embarqués et mobiles où l'autonomie énergétique prime.
 
-\textbf{Rappel des données (Q10) :}
-
 D'après les résultats de la question précédente :
 \begin{itemize}
     \item \textbf{Cortex A7} (1,0 GHz) : $P_{\text{A7}} = 100~\text{mW}$
     \item \textbf{Cortex A15} (2,5 GHz) : $P_{\text{A15}} = 500~\text{mW}$
 \end{itemize}
 
-\textbf{Méthode :}
-
 Pour chaque configuration de cache L1 testée et chaque application (Blowfish et Dijkstra), l'efficacité énergétique a été calculée en divisant l'IPC mesuré lors des simulations gem5 (Q4 pour A7, Q5 pour A15) par la puissance consommée à fréquence maximale. Les résultats sont compilés dans un tableau de synthèse ci-dessous, et présentés graphiquement pour faciliter la comparaison.
-
-\textbf{Résultats et analyse :}
 
 \begin{table}[h]
   \centering
   \caption{Efficacité énergétique (IPC/mW) en fonction de la taille de cache L1}
   \vspace{0.5em}
-  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{2.2cm}|*{4}{>{\centering\arraybackslash}X|}}
-    \hline
+  \begin{tabular}{l c c c c}
+    \toprule
     \textbf{L1 Size} & \textbf{Dijkstra A7} & \textbf{Blowfish A7} & \textbf{Dijkstra A15} & \textbf{Blowfish A15} \\
-    \hline
+    \midrule
     1 kB  & 0.00232  & 0.00198  & -        & -        \\
-    \hline
     2 kB  & 0.00242  & 0.00205  & 0.00129  & 0.00136  \\
-    \hline
     4 kB  & 0.00253  & 0.00219  & 0.00144  & 0.00143  \\
-    \hline
     8 kB  & 0.00275  & 0.00252  & 0.00188  & 0.00179  \\
-    \hline
     16 kB & 0.00282  & 0.00252  & 0.00203  & 0.00180  \\
-    \hline
     32 kB & -        & -        & 0.00228  & 0.00190  \\
-    \hline
-  \end{tabularx}
+    \bottomrule
+  \end{tabular}
 \end{table}
-
-Les figures ci-dessous montrent l'évolution de l'efficacité énergétique (IPC/mW) en fonction de la taille du cache L1 pour chaque application :
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_energy/dijkstra_energy_efficiency.png}
-  \caption{Efficacité énergétique de Dijkstra (A7 vs A15)}
-  \label{fig:dijkstra_efficiency}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_energy/blowfish_energy_efficiency.png}
-  \caption{Efficacité énergétique de Blowfish (A7 vs A15)}
-  \label{fig:blowfish_efficiency}
-\end{subfigure}
-\caption{Efficacité énergétique (IPC/mW) : comparaison entre Dijkstra et Blowfish pour Cortex A7 et A15}
-\label{fig:energy_efficiency}
-\end{figure}
-
-\subsubsection*{\textbf{Analyse des résultats :}}
-
-\begin{itemize}
-    \item \textbf{Dijkstra sur A7} : L'efficacité énergétique augmente progressivement jusqu'à 16 kB (0.00282 IPC/mW), confirmant qu'une taille de cache plus grande bénéficie cette application memory-bound.
-    
-    \item \textbf{Blowfish sur A7} : L'efficacité énergétique atteint un plateau à 8 kB (0.00252 IPC/mW). Les tailles supérieures n'apportent qu'un gain négligeable, confirmant la saturation observée en Q4.
-    
-    \item \textbf{Dijkstra sur A15} : L'efficacité énergétique continue à augmenter jusqu'à 32 kB (0.00228 IPC/mW), bien que le A7 reste légèrement plus efficace énergétiquement pour Dijkstra.
-    
-    \item \textbf{Blowfish sur A15} : Contrairement à Dijkstra, Blowfish sur A15 montre une efficacité énergétique maximale à 16-32 kB (~0.00190 IPC/mW), proche de l'efficacité du A7. Cependant, l'IPC brut du A15 est 3-4× supérieur, compensant largement le coût énergétique.
-    
-    \item \textbf{Comparaison générale} : Pour la plupart des configurations, le Cortex A7 affiche une meilleure efficacité énergétique spécifique (IPC/mW). Cependant, le A15 livre une meilleure efficacité \textit{globale} du système grâce à son IPC beaucoup plus élevé : l'énergie par tâche complétée peut être inférieure malgré une puissance instantanée plus élevée.
-\end{itemize}
 
 \subsection*{\textit{Architecture système big.LITTLE }}
 
@@ -464,11 +659,7 @@ Les figures ci-dessous montrent l'évolution de l'efficacité énergétique (IPC
 Q11, proposez la meilleure configuration du cache L1 du processeur big.LITTLE pour les
 applications Dijkstra et BlowFish individuellement.}
 
-\textbf{Objectif et approche :}
-
 L'architecture big.LITTLE associe deux cœurs : un cœur \textit{économe} (Cortex A7) pour les tâches peu exigeantes et un cœur \textit{performant} (Cortex A15) pour les phases critiques. L'objectif est d'identifier, pour chaque application, la meilleure configuration de cache L1 (où I-L1 et D-L1 partagent la même taille) en maximisant le compromis performance/énergie.
-
-\textbf{Principe de décision :}
 
 Les recommandations s'appuient sur : (i) l'identification du point de rendement décroissant (saturation), où l'augmentation de la taille du cache n'apporte que des gains marginaux, et (ii) la maximisation de l'efficacité énergétique (IPC/mW) observée dans les résultats de Q11.
 
@@ -501,8 +692,6 @@ L1_{A15}^{(\text{Dijkstra})} = \textbf{32 \text{ kB}}
 \paragraph{\textbf{Décision big.LITTLE pour Dijkstra :}}
 
 Le Cortex A7 offre une meilleure efficacité énergétique globale. Dans un vrai système big.LITTLE, le planificateur affecterait Dijkstra principalement à A7 (mode économe). Le A15 n'intervient qu'en cas de contrainte de latence extrême.
-
-\textbf{Configuration retenue :} $(A7, A15) = (16 \text{ kB}, 32 \text{ kB})$
 
 \subsubsection*{\textbf{Recommandation pour Blowfish (Profil : Compute-Bound)}}
 
@@ -539,8 +728,6 @@ L1_{A15}^{(\text{Blowfish})} = \textbf{32 \text{ kB}}
 \paragraph{\textbf{Décision big.LITTLE pour Blowfish :}}
 
 Contrairement à Dijkstra, Blowfish doit \textit{impérativement} s'exécuter sur le Cortex A15 pour bénéficier de l'efficacité énergétique supérieure. Le cœur A7 est inadapté à cette charge.
-
-\textbf{Configuration retenue :} $(A7, A15) = (8 \text{ kB (ou 16 kB)}, 32 \text{ kB})$
 
 \subsection*{\textit{Facultatif}}
 
@@ -591,8 +778,6 @@ L'architecture big.LITTLE se justifie pleinement : elle permet d'assigner chaque
 
 \subsection*{Q14 : Proposez une approche pour la spécification d'une architecture avec plusieurs
 applications dans un domaine spécifique.}
-
-\textbf{Approche méthodologique proposée :}
 
 La conception d'une microarchitecture destinée à exécuter plusieurs applications dans un domaine spécifique (ex. : traitement d'images, chiffrement, algorithmes de graphe) doit suivre une démarche systématique et itérative :
 
@@ -667,6 +852,8 @@ La conception d'une microarchitecture destinée à exécuter plusieurs applicati
     
     \item En cas d'écart significatif par rapport aux prédictions, retourner aux étapes 3-4 et affiner les paramètres.
 \end{itemize}
+
+\textbf{Conclusion :}
 
 Cette approche garantit une conception systématique et fondée sur des données, plutôt que basée sur l'intuition.
 

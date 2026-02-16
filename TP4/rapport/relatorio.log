@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  16 FEB 2026 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  16 FEB 2026 20:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -282,7 +282,7 @@ Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR)
 ) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
 )
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 22.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 29.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -305,22 +305,22 @@ LaTeX Warning: Label `sub@fig:dijkstra_d_miss' multiply defined.
 )
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Info: Redefining \degres on input line 22.
-LaTeX Info: Redefining \up on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Info: Redefining \degres on input line 29.
+LaTeX Info: Redefining \up on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -377,18 +377,21 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 24.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 31.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 26.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 26.
+(Font)              scaled to size 13.67995pt on input line 33.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 28.
+(Font)              scaled to size 11.39996pt on input line 35.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -397,119 +400,136 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 112.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 129.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 11.39996pt on input line 112.
- [2]
-Overfull \hbox (20.57208pt too wide) in paragraph at lines 148--149
+(Font)              scaled to size 11.39996pt on input line 129.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2]
+Overfull \hbox (20.57208pt too wide) in paragraph at lines 167--168
 []\T1/ppl/m/n/10.95 Dijkstra et Blow-fish ont des pro-fils d'ins-truc-tions si-mi-laires (do-mi-nance d'In-tAlu et Mem-Read/Write),
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 <./figures/figures_A7/combined_ipc.png, id=14, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/combined_ipc.png Graphic file (type png)
 <use ./figures/figures_A7/combined_ipc.png>
-Package pdftex.def Info: ./figures/figures_A7/combined_ipc.png  used on input line 197.
+Package pdftex.def Info: ./figures/figures_A7/combined_ipc.png  used on input line 217.
 (pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
 [3]
 <./figures/figures_A7/combined_i_miss_rate.png, id=19, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/combined_i_miss_rate.png Graphic file (type png)
 <use ./figures/figures_A7/combined_i_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/combined_i_miss_rate.png  used on input line 206.
+Package pdftex.def Info: ./figures/figures_A7/combined_i_miss_rate.png  used on input line 226.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
 <./figures/figures_A7/combined_d_miss_rate.png, id=20, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/combined_d_miss_rate.png Graphic file (type png)
 <use ./figures/figures_A7/combined_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/combined_d_miss_rate.png  used on input line 213.
+Package pdftex.def Info: ./figures/figures_A7/combined_d_miss_rate.png  used on input line 233.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
 <./figures/figures_A7/combined_l2_miss_rate.png, id=21, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/combined_l2_miss_rate.png Graphic file (type png)
 <use ./figures/figures_A7/combined_l2_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/combined_l2_miss_rate.png  used on input line 225.
+Package pdftex.def Info: ./figures/figures_A7/combined_l2_miss_rate.png  used on input line 245.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
 <./figures/figures_A7/combined_branch_mispred_rate.png, id=22, 462.528pt x 346.896pt>
 File: ./figures/figures_A7/combined_branch_mispred_rate.png Graphic file (type png)
 <use ./figures/figures_A7/combined_branch_mispred_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/combined_branch_mispred_rate.png  used on input line 232.
+Package pdftex.def Info: ./figures/figures_A7/combined_branch_mispred_rate.png  used on input line 252.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
  [4 <./figures/figures_A7/combined_ipc.png> <./figures/figures_A7/combined_i_miss_rate.png> <./figures/figures_A7/combined_d_miss_rate.png>]
-Overfull \hbox (24.4178pt too wide) in paragraph at lines 254--255
+Overfull \hbox (24.4178pt too wide) in paragraph at lines 274--275
 []\T1/ppl/b/n/10.95 Conclusion : \T1/ppl/m/n/10.95 Pour le Cor-tex A7, la confi-gu-ra-tion \T1/ppl/b/n/10.95 8kB \T1/ppl/m/n/10.95 offre le meilleur com-pro-mis per-for-mance/surface
  []
 
-<./figures/figures_A15/combined_ipc.png, id=29, 462.528pt x 346.896pt>
+[5 <./figures/figures_A7/combined_l2_miss_rate.png> <./figures/figures_A7/combined_branch_mispred_rate.png>]
+<./figures/figures_A15/combined_ipc.png, id=34, 462.528pt x 346.896pt>
 File: ./figures/figures_A15/combined_ipc.png Graphic file (type png)
 <use ./figures/figures_A15/combined_ipc.png>
-Package pdftex.def Info: ./figures/figures_A15/combined_ipc.png  used on input line 267.
+Package pdftex.def Info: ./figures/figures_A15/combined_ipc.png  used on input line 312.
 (pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
-[5 <./figures/figures_A7/combined_l2_miss_rate.png> <./figures/figures_A7/combined_branch_mispred_rate.png>]
-<./figures/figures_A15/combined_i_miss_rate.png, id=36, 462.528pt x 346.896pt>
+<./figures/figures_A15/combined_i_miss_rate.png, id=35, 462.528pt x 346.896pt>
 File: ./figures/figures_A15/combined_i_miss_rate.png Graphic file (type png)
 <use ./figures/figures_A15/combined_i_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/combined_i_miss_rate.png  used on input line 276.
+Package pdftex.def Info: ./figures/figures_A15/combined_i_miss_rate.png  used on input line 321.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/combined_d_miss_rate.png, id=37, 462.528pt x 346.896pt>
+<./figures/figures_A15/combined_d_miss_rate.png, id=36, 462.528pt x 346.896pt>
 File: ./figures/figures_A15/combined_d_miss_rate.png Graphic file (type png)
 <use ./figures/figures_A15/combined_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/combined_d_miss_rate.png  used on input line 283.
+Package pdftex.def Info: ./figures/figures_A15/combined_d_miss_rate.png  used on input line 328.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/combined_l2_miss_rate.png, id=38, 462.528pt x 346.896pt>
+ [6 <./figures/figures_A15/combined_ipc.png>]
+<./figures/figures_A15/combined_l2_miss_rate.png, id=41, 462.528pt x 346.896pt>
 File: ./figures/figures_A15/combined_l2_miss_rate.png Graphic file (type png)
 <use ./figures/figures_A15/combined_l2_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/combined_l2_miss_rate.png  used on input line 295.
+Package pdftex.def Info: ./figures/figures_A15/combined_l2_miss_rate.png  used on input line 340.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/combined_branch_mispred_rate.png, id=39, 462.528pt x 346.896pt>
+<./figures/figures_A15/combined_branch_mispred_rate.png, id=42, 462.528pt x 346.896pt>
 File: ./figures/figures_A15/combined_branch_mispred_rate.png Graphic file (type png)
 <use ./figures/figures_A15/combined_branch_mispred_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/combined_branch_mispred_rate.png  used on input line 302.
+Package pdftex.def Info: ./figures/figures_A15/combined_branch_mispred_rate.png  used on input line 347.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
- [6 <./figures/figures_A15/combined_ipc.png> <./figures/figures_A15/combined_i_miss_rate.png> <./figures/figures_A15/combined_d_miss_rate.png>]
-Overfull \hbox (12.82297pt too wide) in paragraph at lines 313--314
+
+Overfull \hbox (12.82297pt too wide) in paragraph at lines 358--359
 \T1/ppl/m/n/10.95 phis-ti-qué, at-teint des IPC si-gni-fi-ca-ti-ve-ment plus éle-vés que le A7. Les deux ap-pli-ca-tions montrent
  []
 
-
-Overfull \hbox (3.37271pt too wide) in paragraph at lines 324--325
+[7 <./figures/figures_A15/combined_i_miss_rate.png> <./figures/figures_A15/combined_d_miss_rate.png> <./figures/figures_A15/combined_l2_miss_rate.png> <./figures/figures_A15/combined_branch_mispred_rate.png>]
+Overfull \hbox (3.37271pt too wide) in paragraph at lines 369--370
 []\T1/ppl/b/n/10.95 Conclusion : \T1/ppl/m/n/10.95 Pour le Cor-tex A15, la confi-gu-ra-tion op-ti-male dé-pend du trade-off per-for-mance/coût
  []
 
-[7 <./figures/figures_A15/combined_l2_miss_rate.png> <./figures/figures_A15/combined_branch_mispred_rate.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<./figures/figures_energy/dijkstra_energy_efficiency.png, id=56, 722.7pt x 433.62pt>
-File: ./figures/figures_energy/dijkstra_energy_efficiency.png Graphic file (type png)
-<use ./figures/figures_energy/dijkstra_energy_efficiency.png>
-Package pdftex.def Info: ./figures/figures_energy/dijkstra_energy_efficiency.png  used on input line 432.
-(pdftex.def)             Requested size: 232.17242pt x 139.30379pt.
-<./figures/figures_energy/blowfish_energy_efficiency.png, id=57, 722.7pt x 433.62pt>
-File: ./figures/figures_energy/blowfish_energy_efficiency.png Graphic file (type png)
-<use ./figures/figures_energy/blowfish_energy_efficiency.png>
-Package pdftex.def Info: ./figures/figures_energy/blowfish_energy_efficiency.png  used on input line 439.
-(pdftex.def)             Requested size: 232.17242pt x 139.30379pt.
 [8]
-Overfull \hbox (14.6288pt too wide) in paragraph at lines 454--455
-[]\T1/ppl/b/n/10.95 Dijkstra sur A15 \T1/ppl/m/n/10.95 : L'ef-fi-ca-cité éner-gé-tique conti-nue à aug-men-ter jus-qu'à 32 kB (0.00228 IPC/mW),
+Overfull \hbox (9.71106pt too wide) in paragraph at lines 436--438
+[]\T1/ppl/m/n/10.95 Pour cette étude, la tech-no-lo-gie uti-li-sée est \T1/ppl/b/n/10.95 32 nm \T1/ppl/m/n/10.95 (pa-ra-mètre CACTI : \T1/pcr/m/n/10.95 -technology (u) 0.032\T1/ppl/m/n/10.95 ),
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 456.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+<Q8/Q8_A7_L1tot.png, id=61, 416.2752pt x 328.1058pt>
+File: Q8/Q8_A7_L1tot.png Graphic file (type png)
+<use Q8/Q8_A7_L1tot.png>
+Package pdftex.def Info: Q8/Q8_A7_L1tot.png  used on input line 478.
+(pdftex.def)             Requested size: 386.95897pt x 305.01508pt.
+[9]
+<Q8/Q8_A7_total.png, id=65, 416.2752pt x 328.1058pt>
+File: Q8/Q8_A7_total.png Graphic file (type png)
+<use Q8/Q8_A7_total.png>
+Package pdftex.def Info: Q8/Q8_A7_total.png  used on input line 484.
+(pdftex.def)             Requested size: 386.95897pt x 305.01508pt.
+ [10 <./Q8/Q8_A7_L1tot.png> <./Q8/Q8_A7_total.png>]
+<./Q8/Q8_A15_L1tot.png, id=71, 416.2752pt x 328.1058pt>
+File: ./Q8/Q8_A15_L1tot.png Graphic file (type png)
+<use ./Q8/Q8_A15_L1tot.png>
+Package pdftex.def Info: ./Q8/Q8_A15_L1tot.png  used on input line 510.
+(pdftex.def)             Requested size: 386.95897pt x 305.01508pt.
+<./Q8/Q8_A15_total.png, id=72, 416.2752pt x 328.1058pt>
+File: ./Q8/Q8_A15_total.png Graphic file (type png)
+<use ./Q8/Q8_A15_total.png>
+Package pdftex.def Info: ./Q8/Q8_A15_total.png  used on input line 516.
+(pdftex.def)             Requested size: 386.95897pt x 305.01508pt.
+ [11 <./Q8/Q8_A15_L1tot.png>] [12 <./Q8/Q8_A15_total.png>] [13] [14]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 723.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-) [9 <./figures/figures_energy/dijkstra_energy_efficiency.png> <./figures/figures_energy/blowfish_energy_efficiency.png>] [10]
-Overfull \hbox (2.44185pt too wide) in paragraph at lines 577--578
+) [15]
+Overfull \hbox (2.44185pt too wide) in paragraph at lines 764--765
 []\T1/ppl/b/n/10.95 Pour les deux ap-pli-ca-tions sur A15 \T1/ppl/m/n/10.95 : 32 kB est l'op-ti-mum ob-servé (sa-tu-ra-tion tar-dive, meilleure
  []
 
-[11]
-Overfull \hbox (51.87762pt too wide) in paragraph at lines 644--645
+
+Overfull \hbox (51.87762pt too wide) in paragraph at lines 829--830
 []\T1/ppl/m/n/10.95 Construire des gra-phiques 3D ou des Pa-reto fron-tiers mon-trant le trade-off per-for-mance/énergie/surface
  []
 
-
-Overfull \hbox (26.74834pt too wide) in paragraph at lines 648--649
+[16]
+Overfull \hbox (26.74834pt too wide) in paragraph at lines 833--834
 []\T1/ppl/m/n/10.95 Calculer des mé-triques nor-ma-li-sées (ef-fi-ca-cité éner-gé-tique IPC/mW, ef-fi-ca-cité sur-fa-cique IPC/mm\TS1/ppl/m/n/10.95 ²\T1/ppl/m/n/10.95 )
  []
 
-[12] (./relatorio.aux)
+[17] (./relatorio.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -520,18 +540,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7695 strings out of 476153
- 127871 string characters out of 5794327
- 1951975 words of memory out of 5000000
- 29596 multiletter control sequences out of 15000+600000
- 592625 words of font info for 89 fonts, out of 8000000 for 9000
+ 7718 strings out of 476153
+ 127713 string characters out of 5794327
+ 1940975 words of memory out of 5000000
+ 29612 multiletter control sequences out of 15000+600000
+ 597653 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 67i,12n,77p,613b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,14n,77p,558b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on relatorio.pdf (12 pages, 689224 bytes).
+Output written on relatorio.pdf (17 pages, 805612 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
