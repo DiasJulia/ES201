@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1771270657.02576 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1771270658.07172 0
+["pdflatex"] 1771271824.17041 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1771271825.16168 0
   "/etc/texmf/web2c/texmf.cnf" 1770211485.90741 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1771270656.83321 42751 784395c6e4cfae53b3f5e71c7d80eff6 ""
+  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1771271823.99654 42823 979bd8b256e8f9d8d7c7de802cb276d6 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrb8r.tfm" 1136768653 1292 3059476c50a24578715759f22652f3d0 ""
@@ -128,8 +128,8 @@
   "figures/figures_A7/combined_i_miss_rate.png" 1771236326.99787 47564 325b5c001e404850e23d4b8689fe4b33 ""
   "figures/figures_A7/combined_ipc.png" 1771236327.02437 47602 fc85536e75a3432e2089994d5fe09ff3 ""
   "figures/figures_A7/combined_l2_miss_rate.png" 1771236327.04971 44131 449db9d0375e2c5aaaafbce69ddf6420 ""
-  "relatorio.aux" 1771270658.03022 6344 0362882e95957cd51805f074b2cdb2dd "pdflatex"
-  "relatorio.tex" 1771270656.83321 42751 784395c6e4cfae53b3f5e71c7d80eff6 ""
+  "relatorio.aux" 1771271825.12354 6344 0362882e95957cd51805f074b2cdb2dd "pdflatex"
+  "relatorio.tex" 1771271823.99654 42823 979bd8b256e8f9d8d7c7de802cb276d6 ""
   (generated)
   "relatorio.aux"
   "relatorio.log"
