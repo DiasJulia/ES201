@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1771259512.30275 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1771259514.07187 0
+["pdflatex"] 1771259761.33326 "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" "relatorio.pdf" "relatorio" 1771259763.20997 0
   "/etc/texmf/web2c/texmf.cnf" 1770211485.90741 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1771259510.16983 36961 f0afeabd2ce8d03c9637a839eb2f6c95 ""
+  "/home/julia/gem5/ES201-GIT/TP4/rapport/relatorio.tex" 1771259761.0864 36961 f0afeabd2ce8d03c9637a839eb2f6c95 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrb8r.tfm" 1136768653 1292 3059476c50a24578715759f22652f3d0 ""
@@ -120,10 +120,10 @@
   "figures/figures_A7/combined_i_miss_rate.png" 1771236326.99787 47564 325b5c001e404850e23d4b8689fe4b33 ""
   "figures/figures_A7/combined_ipc.png" 1771236327.02437 47602 fc85536e75a3432e2089994d5fe09ff3 ""
   "figures/figures_A7/combined_l2_miss_rate.png" 1771236327.04971 44131 449db9d0375e2c5aaaafbce69ddf6420 ""
-  "figures/figures_energy/blowfish_energy_efficiency.png" 1771258887.29282 63585 458ffe3d6de77db89d4182abdd40b262 ""
-  "figures/figures_energy/dijkstra_energy_efficiency.png" 1771258887.29791 61869 41bed95b3962da1d1d6eea9172bfff56 ""
-  "relatorio.aux" 1771259513.99614 4349 234fe9d89aa70b6d827cbb08eac95e09 "pdflatex"
-  "relatorio.tex" 1771259510.16983 36961 f0afeabd2ce8d03c9637a839eb2f6c95 ""
+  "figures/figures_energy/blowfish_energy_efficiency.png" 1771259756.80728 65872 02a78ecbc5b081f36fba248af122bfef ""
+  "figures/figures_energy/dijkstra_energy_efficiency.png" 1771259756.81202 66183 3f787b4bb315a28b6209aa46be58b1c1 ""
+  "relatorio.aux" 1771259763.08946 4349 234fe9d89aa70b6d827cbb08eac95e09 "pdflatex"
+  "relatorio.tex" 1771259761.0864 36961 f0afeabd2ce8d03c9637a839eb2f6c95 ""
   (generated)
   "relatorio.aux"
   "relatorio.log"
