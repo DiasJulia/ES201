@@ -488,6 +488,16 @@ meilleures performances pour le Cortex A15 pour les applications sélectionnées
 \end{figure}
 
 \subsection*{\textit{Efficacité surfacique}}
+\subsection*{Q6. Paramètres par défaut du fichier \texttt{cache.cfg}}
+
+L'observation du fichier de configuration \texttt{cache.cfg} montre que les paramètres activés par défaut (lignes non commentées) correspondent à :
+\begin{itemize}
+    \item \textbf{Taille du cache} : \texttt{-size (bytes) 32768}, soit $32768/1024 = 32$~kB ;
+    \item \textbf{Taille de bloc (ligne de cache)} : \texttt{-block size (bytes) 64}, soit $64$~octets ;
+    \item \textbf{Associativité} : \texttt{-associativity 2}, soit un cache 2-way ;
+    \item \textbf{Technologie} : \texttt{-technology (u) 0.032}. Dans CACTI, la technologie est exprimée en $\mu$m, donc $0.032~\mu m \times 1000 = 32$~nm.
+\end{itemize}
+
 
 \subsection*{\textit{Efficacité énergétique}}
 
