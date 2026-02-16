@@ -116,6 +116,8 @@ configurations de mémoires caches (instructions et données)}
 
 L'objectif principal est la caractérisation détaillée de deux cœurs distincts : le Cortex-A7 (cœur à haut rendement et à exécution séquentielle) et le Cortex-A15 (cœur à hautes performances et à exécution déséquilibrée), à l'aide du simulateur d'architecture gem5 et de l'outil de modélisation physique CACTI.
 
+\subsection*{\textit{Profiling de l’application }}
+
 \subsection*{Q1. Générez le pourcentage de chaque classe d'instructions de ces applications et remplissez
 les valeurs dans un tableau.}
 
@@ -152,12 +154,41 @@ produit de polynômes ?}
 
 Dijkstra et Blowfish ont des profils d'instructions similaires (dominance d'IntAlu et MemRead/Write), ce qui explique des comportements de cache comparables.
 
+\subsection*{\textit{Evaluation des performances}}
+\noindent Nous allons nous baser sur les métriques suivantes pour analyser les questions 4 et 5:
+\begin{itemize}
+  \item \textbf{IPC (Instructions Par Cycle)} : nombre moyen d’instructions exécutées par cycle. Plus l’IPC est élevé, meilleure est la performance.
+  \item \textbf{CPI (Cycles Par Instruction)} : nombre moyen de cycles nécessaires pour exécuter une instruction. Plus le CPI est faible, meilleure est la performance.
+  \item \textbf{I-miss rate (L1I)} : taux de défauts du cache d’instructions. Un taux élevé indique des fetchs fréquents en mémoire plus lente.
+  \item \textbf{D-miss rate (L1D)} : taux de défauts du cache de données. Un taux élevé implique des latences mémoire plus importantes.
+  \item \textbf{L2 miss rate} : taux de défauts du cache de niveau 2, impactant la pression sur la mémoire principale.
+  \item \textbf{Branch misprediction rate} : proportion de branches mal prédites. Un taux élevé pénalise le pipeline et réduit l’IPC.
+\end{itemize}
+
 \subsection*{Q4 : Générez les figures de performances détaillées (performance générale, IPC, hiérarchie
 mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1 pour les
 configurations testées. Analysez les résultats. Quelle configuration de L1 donne les meilleures
 performances pour le Cortex A7 pour les applications sélectionnées ?}
 
-Pour analyser les performances du Cortex A7 avec les différentes tailles de cache L1, nous avons généré des figures détaillées pour l'IPC (Instructions Par Cycle) et le CPI (Cycles Par Instruction) pour les applications Blowfish et Dijkstra.
+\begin{tabular}{l c c c c c c c}
+        \toprule
+        \textbf{Prog.} & \textbf{Taille L1} & \textbf{IPC} & \textbf{CPI} & \textbf{I-Miss (\%)} & \textbf{D-Miss (\%)} & \textbf{L2-Miss (\%)} & \textbf{Br. Mispred (\%)} \\
+        \midrule
+        \multirow{5}{*}{Blowfish} 
+        & 1kB  & 0.20 & 5.04 & 54.98 & 49.23 & 4.32 & 3.83 \\
+        & 2kB  & 0.21 & 4.87 & 2.73  & 41.00 & 8.42 & 3.83 \\
+        & 4kB  & 0.22 & 4.56 & 2.40  & 27.46 & 12.33 & 3.82 \\
+        & 8kB  & 0.25 & 3.97 & 2.04  & 5.79  & 58.98 & 3.82 \\
+        & 16kB & 0.25 & 3.97 & 1.88  & 5.73  & 60.48 & 3.82 \\
+        \midrule
+        \multirow{5}{*}{Dijkstra} 
+        & 1kB  & 0.23 & 4.32 & 14.17 & 23.61 & 0.10 & 1.99 \\
+        & 2kB  & 0.24 & 4.14 & 12.11 & 17.50 & 0.13 & 1.99 \\
+        & 4kB  & 0.25 & 3.95 & 5.59  & 13.10 & 0.19 & 1.98 \\
+        & 8kB  & 0.28 & 3.63 & 0.52  & 6.14  & 0.49 & 1.99 \\
+        & 16kB & 0.28 & 3.54 & 0.03  & 4.12  & 0.77 & 1.98 \\
+        \bottomrule
+    \end{tabular}
 
 % Incluir aqui as imagens que tão em figures/figures_A7 para cada configuração de cache L1 (C1 e C2) e para cada aplicação (Blowfish, Dijkstra, etc.).
 La metrique de l'IPC (Instructions Par Cycle) est un indicateur clé de la performance d'un processeur, mesurant le nombre d'instructions exécutées par cycle d'horloge.
@@ -203,6 +234,140 @@ La metrique du CPI (Cycles Par Instruction) est également cruciale, car elle in
 \end{figure}
 
 
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_i_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_i_miss_rate}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_i_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_i_miss_rate}
+\end{subfigure}
+\caption{i miss rate sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:i_miss_rate_a7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_d_miss_rate}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_d_miss_rate}
+\end{subfigure}
+\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:d_miss_rate_a7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_l2_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_l2_miss_rate_a7}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_l2_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_l2_miss_rate_a7}
+\end{subfigure}
+\caption{L2 miss rate sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:l2_miss_rate_a7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_branch_mispred_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_branch_mispred_rate_a7}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_branch_mispred_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_branch_mispred_rate_a7}
+\end{subfigure}
+\caption{Branch misprediction rate sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:branch_mispred_rate_a7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_d_miss_rate}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_d_miss_rate}
+\end{subfigure}
+\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:d_miss_rate_a7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_d_miss_rate}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_d_miss_rate}
+\end{subfigure}
+\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:d_miss_rate_a7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_d_miss_rate}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_d_miss_rate}
+\end{subfigure}
+\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
+\label{fig:d_miss_rate_a7}
+\end{figure}
+
+
 \subsection*{Q5 : Générez les figures de performances détaillées (performance générale, IPC, hiérarchie
 mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1 pour les
 configurations testées. Analysez les résultats. Quelle configuration de L1 donne les
@@ -245,5 +410,89 @@ meilleures performances pour le Cortex A15 pour les applications sélectionnées
 \caption{cpi sur Cortex A15 avec différentes configurations de cache L1}
 \label{fig:cpi_A15}
 \end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_i_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_i_miss_rate_a15}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_i_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_i_miss_rate_a15}
+\end{subfigure}
+\caption{i miss rate sur Cortex A15 avec différentes configurations de cache L1}
+\label{fig:i_miss_rate_a15}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_d_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_d_miss_rate_a15}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_d_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_d_miss_rate_a15}
+\end{subfigure}
+\caption{d miss rate sur Cortex A15 avec différentes configurations de cache L1}
+\label{fig:d_miss_rate_a15}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_l2_miss_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_l2_miss_rate_a15}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_l2_miss_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_l2_miss_rate_a15}
+\end{subfigure}
+\caption{L2 miss rate sur Cortex A15 avec différentes configurations de cache L1}
+\label{fig:l2_miss_rate_a15}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_branch_mispred_rate.png}
+  \caption{Blowfish}
+  \label{fig:blowfish_branch_mispred_rate_a15}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_branch_mispred_rate.png}
+  \caption{Dijkstra}
+  \label{fig:dijkstra_branch_mispred_rate_a15}
+\end{subfigure}
+\caption{Branch misprediction rate sur Cortex A15 avec différentes configurations de cache L1}
+\label{fig:branch_mispred_rate_a15}
+\end{figure}
+
+\subsection*{\textit{Efficacité surfacique}}
+
+\subsection*{\textit{Efficacité énergétique}}
+
+\subsection*{\textit{Architecture système big.LITTLE }}
+
+\subsection*{\textit{Facultatif}}
 
 \end{document}
