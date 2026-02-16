@@ -1,0 +1,11 @@
+bench,l1_size,ipc,power_mw,efficiency
+blowfish,1kB,0.198235,100.0,0.001982
+blowfish,2kB,0.205199,100.0,0.002052
+blowfish,4kB,0.2191,100.0,0.002191
+blowfish,8kB,0.251722,100.0,0.002517
+blowfish,16kB,0.251746,100.0,0.002517
+dijkstra,1kB,0.231705,100.0,0.002317
+dijkstra,2kB,0.241645,100.0,0.002416
+dijkstra,4kB,0.253152,100.0,0.002532
+dijkstra,8kB,0.275197,100.0,0.002752
+dijkstra,16kB,0.282253,100.0,0.002823

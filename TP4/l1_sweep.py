@@ -244,7 +244,14 @@ def write_csv(rows: List[Dict[str, Optional[float]]], csv_path: Path) -> None:
             writer.writerow({k: r.get(k) for k in fieldnames})
 
 
-def plot_from_csv(csv_path: Path, out_dir: Path) -> None:
+def _size_key(size: str) -> Tuple[int, str]:
+    digits = "".join(ch for ch in size if ch.isdigit())
+    unit = "".join(ch for ch in size if ch.isalpha()).lower()
+    num = int(digits) if digits else 0
+    return (num, unit)
+
+
+def plot_from_csv(csv_path: Path, out_dir: Path, combined: bool = False) -> None:
     import matplotlib.pyplot as plt
 
     if not csv_path.exists():
@@ -272,9 +279,44 @@ def plot_from_csv(csv_path: Path, out_dir: Path) -> None:
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    if combined:
+        for key, title in metrics:
+            plt.figure()
+            has_any = False
+            for bench in benches:
+                bench_rows = [r for r in rows if r["bench"] == bench]
+                bench_rows.sort(key=lambda r: _size_key(r["l1_size"]))
+                xs = []
+                ys = []
+                for r in bench_rows:
+                    val = r.get(key)
+                    if val is None or val == "" or val == "None":
+                        continue
+                    xs.append(r["l1_size"])
+                    ys.append(float(val))
+                if not xs:
+                    continue
+                has_any = True
+                plt.plot(xs, ys, marker="o", label=bench)
+
+            if not has_any:
+                plt.close()
+                continue
+
+            plt.title(f"{title} vs L1")
+            plt.xlabel("L1 size")
+            plt.ylabel(title)
+            plt.grid(True, alpha=0.3)
+            plt.legend()
+            out_path = out_dir / f"combined_{key}.png"
+            plt.tight_layout()
+            plt.savefig(out_path, dpi=160)
+            plt.close()
+        return
+
     for bench in benches:
         bench_rows = [r for r in rows if r["bench"] == bench]
-        sizes = [r["l1_size"] for r in bench_rows]
+        bench_rows.sort(key=lambda r: _size_key(r["l1_size"]))
 
         for key, title in metrics:
             xs = []
@@ -328,6 +370,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     plot = sub.add_parser("plot", help="gera figuras a partir do CSV")
     plot.add_argument("--csv", default=str(ROOT / "results_l1" / "results.csv"))
     plot.add_argument("--out-dir", default=str(ROOT / "results_l1" / "figures"))
+    plot.add_argument("--combined", action="store_true", help="gera um grafico com multiple benchmarks")
 
     return p
 
@@ -351,7 +394,7 @@ def main() -> None:
     if args.cmd == "plot":
         csv_path = Path(args.csv).expanduser().resolve()
         out_dir = Path(args.out_dir).expanduser().resolve()
-        plot_from_csv(csv_path, out_dir)
+        plot_from_csv(csv_path, out_dir, combined=args.combined)
         return
 
 

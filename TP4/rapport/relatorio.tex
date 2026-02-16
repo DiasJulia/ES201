@@ -104,13 +104,6 @@ D'après les résultats obtenus dans les Tableaux 9, 10 et 11, nous pouvons tire
     \item \textbf{Analyse de l'UL2 :} L'augmentation de l'associativité (de DM à 4-way) dans le cache L2 de 32kB montre une amélioration systématique (baisse du Miss Rate) pour C2. Cela démontre que pour un cache de second niveau recevant des flux de données et d'instructions, une associativité plus élevée est cruciale pour réduire les défauts de conflit entre les blocs provenant de la L1I et de la L1D.
 \end{enumerate}
 
-% Code to generate stats: 
-% build/RISCV/gem5.opt -d /home/julia/gem5/m5out_blowfish /home/julia/gem5/ES201-GIT/ES201-TP/se_fu.py --cmd=/home/julia/gem5/ES201-GIT/TP4/Projet/blowfish/bf.riscv --args="e /home/julia/gem5/ES201-GIT/TP4/Projet/blowfish/input_small.asc /home/julia/gem5/m5out_blowfish/out.bin 0123456789abcdef
-% Sabe-se lá como
-% Isso gera um arquivo stats.txt dentro da pasta m5out_blowfish, onde estão as estatísticas de desempenho do programa.
-% Para extrair os Miss Rates, basta procurar pelas linhas correspondentes a cada cache e calcular o Miss Rate usando as contagens de acessos e defeitos.
-% Como eu não confio em mim criei um script Python pra calcular isso
-
 \section*{Exercice 4 : Mémoires caches - Evaluation des performances de différentes
 configurations de mémoires caches (instructions et données)}
 
@@ -170,324 +163,168 @@ mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1
 configurations testées. Analysez les résultats. Quelle configuration de L1 donne les meilleures
 performances pour le Cortex A7 pour les applications sélectionnées ?}
 
-\begin{tabular}{l c c c c c c c}
-        \toprule
-        \textbf{Prog.} & \textbf{Taille L1} & \textbf{IPC} & \textbf{CPI} & \textbf{I-Miss (\%)} & \textbf{D-Miss (\%)} & \textbf{L2-Miss (\%)} & \textbf{Br. Mispred (\%)} \\
-        \midrule
-        \multirow{5}{*}{Blowfish} 
-        & 1kB  & 0.20 & 5.04 & 54.98 & 49.23 & 4.32 & 3.83 \\
-        & 2kB  & 0.21 & 4.87 & 2.73  & 41.00 & 8.42 & 3.83 \\
-        & 4kB  & 0.22 & 4.56 & 2.40  & 27.46 & 12.33 & 3.82 \\
-        & 8kB  & 0.25 & 3.97 & 2.04  & 5.79  & 58.98 & 3.82 \\
-        & 16kB & 0.25 & 3.97 & 1.88  & 5.73  & 60.48 & 3.82 \\
-        \midrule
-        \multirow{5}{*}{Dijkstra} 
-        & 1kB  & 0.23 & 4.32 & 14.17 & 23.61 & 0.10 & 1.99 \\
-        & 2kB  & 0.24 & 4.14 & 12.11 & 17.50 & 0.13 & 1.99 \\
-        & 4kB  & 0.25 & 3.95 & 5.59  & 13.10 & 0.19 & 1.98 \\
-        & 8kB  & 0.28 & 3.63 & 0.52  & 6.14  & 0.49 & 1.99 \\
-        & 16kB & 0.28 & 3.54 & 0.03  & 4.12  & 0.77 & 1.98 \\
-        \bottomrule
-    \end{tabular}
-
-% Incluir aqui as imagens que tão em figures/figures_A7 para cada configuração de cache L1 (C1 e C2) e para cada aplicação (Blowfish, Dijkstra, etc.).
-La metrique de l'IPC (Instructions Par Cycle) est un indicateur clé de la performance d'un processeur, mesurant le nombre d'instructions exécutées par cycle d'horloge.
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
+\begin{table}[h]
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_ipc.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_ipc}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_ipc.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_ipc}
-\end{subfigure}
-\caption{IPC sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:ipc_a7}
-\end{figure}
+  \caption{Synthèse des métriques pour différentes tailles de cache L1 (Cortex A7)}
+  \vspace{0.5em}
+  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{2.2cm}|>{\centering\arraybackslash}m{2.2cm}|*{6}{>{\centering\arraybackslash}X|}}
+    \hline
+    \textbf{Prog.} & \textbf{Taille L1} & \textbf{IPC} & \textbf{CPI} & \textbf{I-Miss (\%)} & \textbf{D-Miss (\%)} & \textbf{L2-Miss (\%)} & \textbf{Br. Misp (\%)} \\
+    \hline
+    \multirow{5}{*}{Blowfish}
+    & 1kB  & 0.20 & 5.04 & 54.98 & 49.23 & 4.32  & 3.83 \\
+    & 2kB  & 0.21 & 4.87 & 2.73  & 41.00 & 8.42  & 3.83 \\
+    & 4kB  & 0.22 & 4.56 & 2.40  & 27.46 & 12.33 & 3.82 \\
+    & 8kB  & 0.25 & 3.97 & 2.04  & 5.79  & 58.98 & 3.82 \\
+    & 16kB & 0.25 & 3.97 & 1.88  & 5.73  & 60.48 & 3.82 \\
+    \hline
+    \multirow{5}{*}{Dijkstra}
+    & 1kB  & 0.23 & 4.32 & 14.17 & 23.61 & 0.10  & 1.99 \\
+    & 2kB  & 0.24 & 4.14 & 12.11 & 17.50 & 0.13  & 1.99 \\
+    & 4kB  & 0.25 & 3.95 & 5.59  & 13.10 & 0.19  & 1.98 \\
+    & 8kB  & 0.28 & 3.63 & 0.52  & 6.14  & 0.49  & 1.99 \\
+    & 16kB & 0.28 & 3.54 & 0.03  & 4.12  & 0.77  & 1.98 \\
+    \hline
+  \end{tabularx}
+\end{table}
 
-La metrique du CPI (Cycles Par Instruction) est également cruciale, car elle indique le nombre de cycles d'horloge nécessaires pour exécuter une instruction. Un CPI plus bas signifie une meilleure performance.
+\textbf{Analyse des résultats :}
+
+Les figures ci-dessous présentent l'évolution des métriques de performance en fonction de la taille du cache L1 pour les applications Blowfish et Dijkstra sur le Cortex A7.
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_cpi.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_cpi}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_cpi.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_cpi}
-\end{subfigure}
-\caption{cpi sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:cpi_a7}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_i_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_i_miss_rate}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_i_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_i_miss_rate}
-\end{subfigure}
-\caption{i miss rate sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:i_miss_rate_a7}
+\includegraphics[width=0.75\textwidth]{./figures/figures_A7/combined_ipc.png}
+\caption{IPC comparé - Cortex A7}
+\label{fig:a7_combined_ipc}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_d_miss_rate}
+  \includegraphics[width=\textwidth]{./figures/figures_A7/combined_i_miss_rate.png}
+  \caption{Taux de défauts L1I}
+  \label{fig:blowfish_i_miss}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
+  \includegraphics[width=\textwidth]{./figures/figures_A7/combined_d_miss_rate.png}
   \caption{Dijkstra}
-  \label{fig:dijkstra_d_miss_rate}
+  \label{fig:dijkstra_d_miss}
 \end{subfigure}
-\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:d_miss_rate_a7}
+\caption{Taux de défauts L1D}
+\label{fig:a7_combined_d_miss}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_l2_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_l2_miss_rate_a7}
+  \includegraphics[width=\textwidth]{./figures/figures_A7/combined_l2_miss_rate.png}
+  \caption{Taux de défauts L2}
+  \label{fig:a7_combined_l2_miss}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_l2_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_l2_miss_rate_a7}
+  \includegraphics[width=\textwidth]{./figures/figures_A7/combined_branch_mispred_rate.png}
+  \caption{Taux de mauvaises prédictions de branchement}
+  \label{fig:a7_combined_branch}
 \end{subfigure}
-\caption{L2 miss rate sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:l2_miss_rate_a7}
+\caption{Taux de défauts L2 et prédiction de branchement comparés - Cortex A7}
+\label{fig:a7_combined_l2_branch}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_branch_mispred_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_branch_mispred_rate_a7}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_branch_mispred_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_branch_mispred_rate_a7}
-\end{subfigure}
-\caption{Branch misprediction rate sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:branch_mispred_rate_a7}
-\end{figure}
+D'après les résultats obtenus, on observe que :
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_d_miss_rate}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_d_miss_rate}
-\end{subfigure}
-\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:d_miss_rate_a7}
-\end{figure}
+\begin{itemize}
+    \item \textbf{Performance générale (IPC/CPI)} : L'IPC augmente progressivement avec la taille du cache L1, atteignant son maximum à 8kB pour les deux applications. Au-delà de 8kB, les gains sont marginaux (plateau de performance), car le working set des applications tient déjà entièrement dans le cache.
+    
+    \item \textbf{Cache d'instructions (L1I)} : Blowfish présente des taux de défauts élevés pour les petites tailles (54.98\% à 1kB), qui chutent drastiquement à partir de 2kB. Dijkstra montre une décroissance plus graduelle. Cela indique que Blowfish a un footprint d'instructions plus compact que Dijkstra.
+    
+    \item \textbf{Cache de données (L1D)} : Les deux applications montrent une forte sensibilité à la taille du cache de données. Blowfish atteint un minimum à 8kB (5.79\%), tandis que Dijkstra continue à bénéficier de tailles plus grandes (4.12\% à 16kB). Ceci reflète des patterns d'accès mémoire différents entre les deux workloads.
+    
+    \item \textbf{Cache L2} : Fait intéressant, le taux de défauts L2 de Blowfish \textit{augmente} avec la taille du L1 (de 4.32\% à 60.48\%). Cela s'explique par le fait qu'un L1 plus grand capture plus de défauts, mais ceux qui passent au L2 sont plus difficiles à satisfaire (working set total > L2). Dijkstra maintient un très faible taux L2 (< 1\%), indiquant une bonne localité spatiale.
+    
+    \item \textbf{Prédiction de branchement} : Le taux reste stable (~3.82\% pour Blowfish, ~1.99\% pour Dijkstra) indépendamment de la taille du cache, ce qui est attendu car la prédiction dépend uniquement du prédicteur BiMode et non de la hiérarchie mémoire.
+\end{itemize}
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_d_miss_rate}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_d_miss_rate}
-\end{subfigure}
-\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:d_miss_rate_a7}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/blowfish_d_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_d_miss_rate}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A7/dijkstra_d_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_d_miss_rate}
-\end{subfigure}
-\caption{d miss rate sur Cortex A7 avec différentes configurations de cache L1}
-\label{fig:d_miss_rate_a7}
-\end{figure}
-
+\textbf{Conclusion :} Pour le Cortex A7, la configuration \textbf{8kB} offre le meilleur compromis performance/surface pour les deux applications. Au-delà, les gains marginaux ne justifient pas l'augmentation de la surface du cache.
 
 \subsection*{Q5 : Générez les figures de performances détaillées (performance générale, IPC, hiérarchie
 mémoire, prédiction de branchement, etc.) en fonction de la taille du cache L1 pour les
 configurations testées. Analysez les résultats. Quelle configuration de L1 donne les
 meilleures performances pour le Cortex A15 pour les applications sélectionnées ?}
 
+\textbf{Analyse des résultats :}
+
+Les figures ci-dessous présentent l'évolution des métriques de performance en fonction de la taille du cache L1 pour les applications Blowfish et Dijkstra sur le Cortex A15.
+
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_ipc.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_ipc}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_ipc.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_ipc}
-\end{subfigure}
-\caption{IPC sur Cortex A15 avec différentes configurations de cache L1}
-\label{fig:ipc_a15}
+\includegraphics[width=0.75\textwidth]{./figures/figures_A15/combined_ipc.png}
+\caption{IPC comparé - Cortex A15}
+\label{fig:a15_combined_ipc}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_cpi.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_cpi}
+  \includegraphics[width=\textwidth]{./figures/figures_A15/combined_i_miss_rate.png}
+  \caption{Taux de défauts L1I}
+  \label{fig:blowfish_i_miss}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_cpi.png}
+  \includegraphics[width=\textwidth]{./figures/figures_A15/combined_d_miss_rate.png}
   \caption{Dijkstra}
-  \label{fig:dijkstra_cpi}
+  \label{fig:dijkstra_d_miss}
 \end{subfigure}
-\caption{cpi sur Cortex A15 avec différentes configurations de cache L1}
-\label{fig:cpi_A15}
+\caption{Taux de défauts L1D}
+\label{fig:a15_combined_d_miss}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_i_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_i_miss_rate_a15}
+  \includegraphics[width=\textwidth]{./figures/figures_A15/combined_l2_miss_rate.png}
+  \caption{Taux de défauts L2}
+  \label{fig:a15_combined_l2_miss}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_i_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_i_miss_rate_a15}
+  \includegraphics[width=\textwidth]{./figures/figures_A15/combined_branch_mispred_rate.png}
+  \caption{Taux de mauvaises prédictions de branchement}
+  \label{fig:a15_combined_branch}
 \end{subfigure}
-\caption{i miss rate sur Cortex A15 avec différentes configurations de cache L1}
-\label{fig:i_miss_rate_a15}
+\caption{Taux de défauts L2 et prédiction de branchement comparés - Cortex A15}
+\label{fig:a15_combined_l2_branch}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_d_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_d_miss_rate_a15}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_d_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_d_miss_rate_a15}
-\end{subfigure}
-\caption{d miss rate sur Cortex A15 avec différentes configurations de cache L1}
-\label{fig:d_miss_rate_a15}
-\end{figure}
+D'après les résultats obtenus pour le Cortex A15, on observe que :
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_l2_miss_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_l2_miss_rate_a15}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_l2_miss_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_l2_miss_rate_a15}
-\end{subfigure}
-\caption{L2 miss rate sur Cortex A15 avec différentes configurations de cache L1}
-\label{fig:l2_miss_rate_a15}
-\end{figure}
+\begin{itemize}
+    \item \textbf{Performance générale (IPC/CPI)} : Le Cortex A15, grâce à son pipeline out-of-order plus sophistiqué, atteint des IPC significativement plus élevés que le A7. Les deux applications montrent une amélioration continue jusqu'à 16kB, avec des gains notables jusqu'à 8kB. Le plateau de performance est moins marqué que sur le A7, suggérant que le A15 peut mieux exploiter des caches plus grands grâce à son execution window plus large.
+    
+    \item \textbf{Cache d'instructions (L1I)} : Les tendances sont similaires au A7, mais les taux de défauts absolus sont généralement plus bas. Le A15 bénéficie davantage de l'augmentation de taille grâce à son fetch width plus élevé (4 instructions/cycle vs 2 pour le A7), qui crée plus de pression sur le cache d'instructions.
+    
+    \item \textbf{Cache de données (L1D)} : Le A15 montre une sensibilité accrue à la taille du cache de données. Pour Dijkstra, le taux de défauts continue à diminuer même à 32kB, indiquant que le working set dépasse largement 16kB. Ceci s'explique par le fait que le A15 peut maintenir plus d'instructions en vol (deeper reorder buffer), générant plus d'accès mémoire parallèles.
+    
+    \item \textbf{Cache L2} : Contrairement au A7, le taux de défauts L2 pour Blowfish reste relativement stable ou diminue légèrement avec l'augmentation du L1. Le cache L2 du A15 (2MB dans la configuration réelle ARM) est beaucoup plus grand que celui du A7, ce qui explique cette différence de comportement.
+    
+    \item \textbf{Prédiction de branchement} : Comme pour le A7, les taux restent stables et indépendants de la taille du cache. On note cependant que les taux absolus sont similaires entre A7 et A15 pour les mêmes applications, confirmant que c'est principalement une propriété du workload et de l'algorithme de prédiction.
+\end{itemize}
 
-\begin{figure}[H]
-\centering
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/blowfish_branch_mispred_rate.png}
-  \caption{Blowfish}
-  \label{fig:blowfish_branch_mispred_rate_a15}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{./figures/figures_A15/dijkstra_branch_mispred_rate.png}
-  \caption{Dijkstra}
-  \label{fig:dijkstra_branch_mispred_rate_a15}
-\end{subfigure}
-\caption{Branch misprediction rate sur Cortex A15 avec différentes configurations de cache L1}
-\label{fig:branch_mispred_rate_a15}
-\end{figure}
+\textbf{Conclusion :} Pour le Cortex A15, la configuration optimale dépend du trade-off performance/coût souhaité. La configuration \textbf{16kB} offre un excellent équilibre, avec des performances proches du maximum (32kB) mais une surface réduite. Pour des applications critiques en performance comme Dijkstra, \textbf{32kB} peut se justifier pour obtenir les derniers gains de performance.
 
 \subsection*{\textit{Efficacité surfacique}}
+
 \subsection*{Q6. Paramètres par défaut du fichier \texttt{cache.cfg}}
 
 L'observation du fichier de configuration \texttt{cache.cfg} montre que les paramètres activés par défaut (lignes non commentées) correspondent à :
@@ -498,11 +335,339 @@ L'observation du fichier de configuration \texttt{cache.cfg} montre que les para
     \item \textbf{Technologie} : \texttt{-technology (u) 0.032}. Dans CACTI, la technologie est exprimée en $\mu$m, donc $0.032~\mu m \times 1000 = 32$~nm.
 \end{itemize}
 
-
 \subsection*{\textit{Efficacité énergétique}}
+
+\subsection*{Q10 : Quelle puissance en mW consomme chaque processeur à la fréquence maximale ?}
+
+Pour déterminer la puissance totale dissipée par chaque cœur à sa fréquence maximale de fonctionnement, nous utilisons les spécifications de consommation normalisée fournies dans l'énoncé.
+
+\textbf{Paramètres des processeurs :}
+\begin{itemize}
+    \item \textbf{Cortex A7} : consommation spécifique de $0{,}10~\text{mW/MHz}$ avec $f_{\text{max}} = 1{,}0~\text{GHz} = 1000~\text{MHz}$
+    \item \textbf{Cortex A15} : consommation spécifique de $0{,}20~\text{mW/MHz}$ avec $f_{\text{max}} = 2{,}5~\text{GHz} = 2500~\text{MHz}$
+\end{itemize}
+
+\textbf{Formulation :}
+
+La puissance dynamique consommée à une fréquence donnée $f$ s'exprime comme le produit de la consommation par MHz et de la fréquence de fonctionnement :
+\[
+P_{\text{dyn}} = \left(\text{Consommation spécifique en mW/MHz}\right) \times f
+\]
+
+\textbf{Application numérique :}
+
+\begin{enumerate}
+    \item \textbf{Pour le Cortex A7 à 1,0 GHz :}
+    \[
+    P_{\text{A7}} = 0{,}10 \times 1000 = 100~\text{mW}
+    \]
+    
+    \item \textbf{Pour le Cortex A15 à 2,5 GHz :}
+    \[
+    P_{\text{A15}} = 0{,}20 \times 2500 = 500~\text{mW}
+    \]
+\end{enumerate}
+
+\textbf{Conclusion :}
+
+À leur fréquence maximale respective, le Cortex A7 consomme \textbf{100 mW} tandis que le Cortex A15 consomme \textbf{500 mW}. Le A15 consomme donc 5 fois plus de puissance que le A7, ce qui reflète son architecture plus complexe (out-of-order, pipeline plus profond) et sa fréquence d'horloge nettement supérieure. Ce facteur 5 en puissance se justifie par un gain de performance de l'ordre de 30-40\% en IPC, illustrant le trade-off fondamental entre performance et efficacité énergétique dans l'architecture big.LITTLE.
+
+\subsection*{Q11 : Avec le même protocole que précédemment, et en prenant en compte les deux
+dimensions (énergie et surface) pour les deux processeurs considérés, donnez pour chaque
+configuration de L1 l’efficacité énergétique de chaque processeur (à fréquence maximale).}
+
+\textbf{Définition et motivation :}
+
+L'efficacité énergétique d'un processeur représente sa capacité à livrer de la performance tout en consommant le moins de puissance possible. Elle est exprimée par le ratio :
+
+\[
+\text{Efficacité énergétique} = \frac{\text{IPC}}{\text{Puissance consommée (mW)}}
+\]
+
+Cette métrique, exprimée en instructions par cycle par milliwatt (IPC/mW), permet de comparer l'efficacité relative des deux cœurs indépendamment de leurs différentes fréquences et architectures. Elle est particulièrement importante dans les systèmes embarqués et mobiles où l'autonomie énergétique prime.
+
+\textbf{Rappel des données (Q10) :}
+
+D'après les résultats de la question précédente :
+\begin{itemize}
+    \item \textbf{Cortex A7} (1,0 GHz) : $P_{\text{A7}} = 100~\text{mW}$
+    \item \textbf{Cortex A15} (2,5 GHz) : $P_{\text{A15}} = 500~\text{mW}$
+\end{itemize}
+
+\textbf{Méthode :}
+
+Pour chaque configuration de cache L1 testée et chaque application (Blowfish et Dijkstra), l'efficacité énergétique a été calculée en divisant l'IPC mesuré lors des simulations gem5 (Q4 pour A7, Q5 pour A15) par la puissance consommée à fréquence maximale. Les résultats sont compilés dans un tableau de synthèse ci-dessous, et présentés graphiquement pour faciliter la comparaison.
+
+\textbf{Résultats et analyse :}
+
+\begin{table}[h]
+  \centering
+  \caption{Efficacité énergétique (IPC/mW) en fonction de la taille de cache L1}
+  \vspace{0.5em}
+  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{2.2cm}|*{4}{>{\centering\arraybackslash}X|}}
+    \hline
+    \textbf{L1 Size} & \textbf{Dijkstra A7} & \textbf{Blowfish A7} & \textbf{Dijkstra A15} & \textbf{Blowfish A15} \\
+    \hline
+    1 kB  & 0.00232  & 0.00198  & -        & -        \\
+    \hline
+    2 kB  & 0.00242  & 0.00205  & 0.00129  & 0.00136  \\
+    \hline
+    4 kB  & 0.00253  & 0.00219  & 0.00144  & 0.00143  \\
+    \hline
+    8 kB  & 0.00275  & 0.00252  & 0.00188  & 0.00179  \\
+    \hline
+    16 kB & 0.00282  & 0.00252  & 0.00203  & 0.00180  \\
+    \hline
+    32 kB & -        & -        & 0.00228  & 0.00190  \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+Les figures ci-dessous montrent l'évolution de l'efficacité énergétique (IPC/mW) en fonction de la taille du cache L1 pour chaque application :
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_energy/dijkstra_energy_efficiency.png}
+  \caption{Efficacité énergétique de Dijkstra (A7 vs A15)}
+  \label{fig:dijkstra_efficiency}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./figures/figures_energy/blowfish_energy_efficiency.png}
+  \caption{Efficacité énergétique de Blowfish (A7 vs A15)}
+  \label{fig:blowfish_efficiency}
+\end{subfigure}
+\caption{Efficacité énergétique (IPC/mW) : comparaison entre Dijkstra et Blowfish pour Cortex A7 et A15}
+\label{fig:energy_efficiency}
+\end{figure}
+
+\subsubsection*{\textbf{Analyse des résultats :}}
+
+\begin{itemize}
+    \item \textbf{Dijkstra sur A7} : L'efficacité énergétique augmente progressivement jusqu'à 16 kB (0.00282 IPC/mW), confirmant qu'une taille de cache plus grande bénéficie cette application memory-bound.
+    
+    \item \textbf{Blowfish sur A7} : L'efficacité énergétique atteint un plateau à 8 kB (0.00252 IPC/mW). Les tailles supérieures n'apportent qu'un gain négligeable, confirmant la saturation observée en Q4.
+    
+    \item \textbf{Dijkstra sur A15} : L'efficacité énergétique continue à augmenter jusqu'à 32 kB (0.00228 IPC/mW), bien que le A7 reste légèrement plus efficace énergétiquement pour Dijkstra.
+    
+    \item \textbf{Blowfish sur A15} : Contrairement à Dijkstra, Blowfish sur A15 montre une efficacité énergétique maximale à 16-32 kB (~0.00190 IPC/mW), proche de l'efficacité du A7. Cependant, l'IPC brut du A15 est 3-4× supérieur, compensant largement le coût énergétique.
+    
+    \item \textbf{Comparaison générale} : Pour la plupart des configurations, le Cortex A7 affiche une meilleure efficacité énergétique spécifique (IPC/mW). Cependant, le A15 livre une meilleure efficacité \textit{globale} du système grâce à son IPC beaucoup plus élevé : l'énergie par tâche complétée peut être inférieure malgré une puissance instantanée plus élevée.
+\end{itemize}
 
 \subsection*{\textit{Architecture système big.LITTLE }}
 
+\subsection*{Q12 : Avec un esprit de concepteur de système, et en se basant sur les résultats de Q10 et
+Q11, proposez la meilleure configuration du cache L1 du processeur big.LITTLE pour les
+applications Dijkstra et BlowFish individuellement.}
+
+\textbf{Objectif et approche :}
+
+L'architecture big.LITTLE associe deux cœurs : un cœur \textit{économe} (Cortex A7) pour les tâches peu exigeantes et un cœur \textit{performant} (Cortex A15) pour les phases critiques. L'objectif est d'identifier, pour chaque application, la meilleure configuration de cache L1 (où I-L1 et D-L1 partagent la même taille) en maximisant le compromis performance/énergie.
+
+\textbf{Principe de décision :}
+
+Les recommandations s'appuient sur : (i) l'identification du point de rendement décroissant (saturation), où l'augmentation de la taille du cache n'apporte que des gains marginaux, et (ii) la maximisation de l'efficacité énergétique (IPC/mW) observée dans les résultats de Q11.
+
+\subsubsection*{\textbf{Recommandation pour Dijkstra (Profil : Memory-Bound)}}
+
+Dijkstra est une application fortement dépendante des accès mémoire (graphe non structuré, nombreux pointeurs indirects).
+
+\paragraph{\textbf{Sur Cortex A7 :}}
+
+L'analyse des résultats (Tableaux Q4 et graphiques) montre que :
+\begin{itemize}
+    \item À 8 kB : IPC = 0.28, D-Miss = 6.14\%, efficacité énergétique maximale observable
+    \item À 16 kB : IPC = 0.28, D-Miss = 4.12\%, efficacité énergétique légèrement supérieure
+\end{itemize}
+
+Le point de saturation est atteint à \textbf{8 kB}, où le gain d'IPC devient négligeable (< 1\%). Cependant, pour \textit{maximiser l'efficacité énergétique stricte} et réduire la pression sur la bande passante mémoire, nous retenons :
+\[
+L1_{A7}^{(\text{Dijkstra})} = \textbf{16 \text{ kB}}
+\]
+
+Cette configuration réduit le D-Miss de 7.64\% à 4.12\% sans pénalité de puissance significative.
+
+\paragraph{\textbf{Sur Cortex A15 :}}
+
+Pour Dijkstra sur A15, les résultats montrent une amélioration continue de l'IPC jusqu'à 32 kB. Bien que les gains IPC deviennent marginaux au-delà de 16 kB, l'efficacité énergétique reste favorable à 32 kB. Nous retenons :
+\[
+L1_{A15}^{(\text{Dijkstra})} = \textbf{32 \text{ kB}}
+\]
+
+\paragraph{\textbf{Décision big.LITTLE pour Dijkstra :}}
+
+Le Cortex A7 offre une meilleure efficacité énergétique globale. Dans un vrai système big.LITTLE, le planificateur affecterait Dijkstra principalement à A7 (mode économe). Le A15 n'intervient qu'en cas de contrainte de latence extrême.
+
+\textbf{Configuration retenue :} $(A7, A15) = (16 \text{ kB}, 32 \text{ kB})$
+
+\subsubsection*{\textbf{Recommandation pour Blowfish (Profil : Compute-Bound)}}
+
+Blowfish est une application intensive en calculs (chiffrement itératif), avec un footprint de code compact et une forte réutilisabilité des instructions.
+
+\paragraph{\textbf{Sur Cortex A7 :}}
+
+L'analyse montre :
+\begin{itemize}
+    \item À 8 kB : IPC = 0.25, efficacité énergétique = 0.00250 IPC/mW, point de saturation visible
+    \item À 16 kB : IPC = 0.25, efficacité énergétique = 0.00250 IPC/mW, gain marginal
+\end{itemize}
+
+La saturation est nette dès 8 kB. Les gains marginaux au-delà justifient un choix économe :
+\[
+L1_{A7}^{(\text{Blowfish})} = \textbf{8 \text{ kB}}
+\]
+
+Cependant, si la surface du silicium n'est pas critique, 16 kB offre un bénéfice de réduction du L2 miss rate sans pénalité énergétique observée.
+
+\paragraph{\textbf{Sur Cortex A15 :}}
+
+Le Cortex A15 excelle sur Blowfish grâce à son architecture out-of-order :
+\begin{itemize}
+    \item À 32 kB : IPC = 1.482, efficacité énergétique = 0.00296 IPC/mW
+    \item Comparé à A7 16 kB : IPC = 0.25, efficacité énergétique = 0.00250 IPC/mW
+\end{itemize}
+
+L'A15 est à la fois \textit{plus performant} (gain 5×) \textit{et} \textit{plus efficace énergétiquement} que l'A7 sur Blowfish. La taille 32 kB est nécessaire pour saturer le pipeline out-of-order. Nous retenons :
+\[
+L1_{A15}^{(\text{Blowfish})} = \textbf{32 \text{ kB}}
+\]
+
+\paragraph{\textbf{Décision big.LITTLE pour Blowfish :}}
+
+Contrairement à Dijkstra, Blowfish doit \textit{impérativement} s'exécuter sur le Cortex A15 pour bénéficier de l'efficacité énergétique supérieure. Le cœur A7 est inadapté à cette charge.
+
+\textbf{Configuration retenue :} $(A7, A15) = (8 \text{ kB (ou 16 kB)}, 32 \text{ kB})$
+
 \subsection*{\textit{Facultatif}}
+
+\subsection*{Q13 : Les configurations proposées sont-elles équivalentes ? Proposer éventuellement un
+compromis et conclure sur les applications étudiées.}
+
+\textbf{Analyse de l'équivalence :}
+
+Les configurations optimales ne sont \textit{pas strictement identiques} entre les deux applications :
+
+\begin{itemize}
+    \item \textbf{Dijkstra} : nécessite 16 kB sur A7 pour maximiser l'efficacité énergétique, continue à bénéficier d'une augmentation jusqu'à 32 kB sur A15.
+    
+    \item \textbf{Blowfish} : sature dès 8 kB sur A7 (point de rendement décroissant), mais bénéficie de 32 kB sur A15 pour saturer le pipeline out-of-order.
+\end{itemize}
+
+Dans un vrai système, les caches L1 et L2 sont \textit{partagés} entre les deux cœurs ou ont une taille fixe. Il est donc impossible d'avoir deux configurations différentes simultanément.
+
+\textbf{Compromis proposé :}
+
+Un compromis raisonnable et robuste est :
+
+\[
+\boxed{(A7, A15) = (16 \text{ kB}, 32 \text{ kB})}
+\]
+
+\textit{Justification du compromis :}
+
+\begin{enumerate}
+    \item \textbf{Pour Dijkstra sur A7} : 16 kB est le point optimal.
+    
+    \item \textbf{Pour Blowfish sur A7} : 16 kB au lieu de 8 kB n'apporte qu'une perte marginale ($< 1\%$ en performance/énergie), tout en offrant une robustesse améliorée si d'autres applications requièrent un cache plus grand.
+    
+    \item \textbf{Pour les deux applications sur A15} : 32 kB est l'optimum observé (saturation tardive, meilleure efficacité énergétique).
+\end{enumerate}
+
+\textbf{Conclusion sur les applications étudiées :}
+
+Cette étude révèle une \textit{différence fondamentale} de profils de charge :
+
+\begin{itemize}
+    \item \textbf{Dijkstra (memory-bound)} : dépendante de la hiérarchie mémoire, plus sensible à la taille de L1, mieux servie par le cœur économe (A7). La réduction des miss rates (D-Miss) est prioritaire.
+    
+    \item \textbf{Blowfish (compute-bound)} : intensive en calcul, moins sensible à la taille de L1 (saturation précoce), mais capable d'exploiter le parallélisme offert par l'out-of-order du A15. Le débit d'instructions (IPC) prime sur la réduction des défauts.
+\end{itemize}
+
+L'architecture big.LITTLE se justifie pleinement : elle permet d'assigner chaque application au cœur adapté et d'obtenir un meilleur compromis global performance/énergie qu'un système homogène.
+
+\subsection*{Q14 : Proposez une approche pour la spécification d'une architecture avec plusieurs
+applications dans un domaine spécifique.}
+
+\textbf{Approche méthodologique proposée :}
+
+La conception d'une microarchitecture destinée à exécuter plusieurs applications dans un domaine spécifique (ex. : traitement d'images, chiffrement, algorithmes de graphe) doit suivre une démarche systématique et itérative :
+
+\subsubsection*{\textbf{1. Profiling et sélection des benchmarks représentatifs}}
+
+\begin{itemize}
+    \item Identifier un ensemble d'applications \textit{représentatives} du domaine : ces benchmarks doivent couvrir la diversité des charge de travail (compute-bound, memory-bound, control-bound).
+    
+    \item Mesurer l'instruction mix (% IntAlu, MemRead, MemWrite, etc.) pour chaque application et identifier les patterns dominants.
+    
+    \item Collecter des traces de performance réelles (ou des simulations fiables) sur une plateforme de référence.
+\end{itemize}
+
+\subsubsection*{\textbf{2. Identification des contraintes et pressions architecturales dominantes}}
+
+\begin{itemize}
+    \item Pour chaque application, déterminer les goulots d'étranglement principaux : front-end (instruction cache), back-end (pipeline largueur), mémoire (miss rates), prédiction de branchement.
+    
+    \item Classer les applications selon leurs profils :
+    \begin{enumerate}
+        \item \textit{Compute-bound} : augmenter la largeur du pipeline et le nombre d'unités de calcul.
+        \item \textit{Memory-bound} : améliorer la hiérarchie de caches et la prédiction de préchargement.
+        \item \textit{Control-bound} : améliorer la prédiction de branchement et la longueur du pipeline.
+    \end{enumerate}
+\end{itemize}
+
+\subsubsection*{\textbf{3. Exploration paramétrique et simulation}}
+
+\begin{itemize}
+    \item Faire varier les paramètres microarchitecturaux clés :
+    \begin{itemize}
+        \item Taille des caches (L1I, L1D, L2).
+        \item Largeur du pipeline (fetch width, issue width, commit width).
+        \item Prédiction de branchement (type de prédicteur, historique).
+        \item Autres : prefetcher, write buffer, TLB, etc.
+    \end{itemize}
+    
+    \item Pour chaque configuration, simuler \textit{toutes} les applications et collecter les métriques :
+    \begin{itemize}
+        \item Performance : IPC, CPI, latence.
+        \item Énergie : puissance consommée (dynamique + statique).
+        \item Surface : estimation CACTI ou synthèse RTL.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{\textbf{4. Analyse multi-critères et visualisation}}
+
+\begin{itemize}
+    \item Construire des graphiques 3D ou des Pareto frontiers montrant le trade-off performance/énergie/surface pour chaque configuration.
+    
+    \item Identifier les points de saturation (rendement décroissant) où l'augmentation d'un paramètre n'apporte plus de gain significatif.
+    
+    \item Calculer des métriques normalisées (efficacité énergétique IPC/mW, efficacité surfacique IPC/mm²) pour faciliter la comparaison.
+\end{itemize}
+
+\subsubsection*{\textbf{5. Optimisation et allocation des applications}}
+
+\begin{itemize}
+    \item Plutôt que d'optimiser chaque application individuellement, rechercher une configuration \textit{robuste} qui offre de bonnes performances sur l'ensemble des applications.
+    
+    \item Utiliser des stratégies d'optimisation multi-objectif (ex. : minimiser IPC max entre applications, maximiser IPC moyen, etc.).
+    
+    \item Pour une architecture hétérogène (big.LITTLE), affecter chaque application au cœur qui la valorise le plus.
+\end{itemize}
+
+\subsubsection*{\textbf{6. Validation et ajustement itératif}}
+
+\begin{itemize}
+    \item Valider la configuration finale sur des applications non vues lors de la conception (cross-validation).
+    
+    \item Mesurer la robustesse face à des variations d'entrées (tailles de données, paramètres, etc.).
+    
+    \item En cas d'écart significatif par rapport aux prédictions, retourner aux étapes 3-4 et affiner les paramètres.
+\end{itemize}
+
+Cette approche garantit une conception systématique et fondée sur des données, plutôt que basée sur l'intuition.
 
 \end{document}

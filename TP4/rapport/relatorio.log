@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  16 FEB 2026 10:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.2.7)  16 FEB 2026 17:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -291,73 +291,16 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box58
 ) (./relatorio.aux
 
-LaTeX Warning: Label `fig:blowfish_d_miss_rate' multiply defined.
+LaTeX Warning: Label `fig:blowfish_i_miss' multiply defined.
 
 
-LaTeX Warning: Label `sub@fig:blowfish_d_miss_rate' multiply defined.
+LaTeX Warning: Label `sub@fig:blowfish_i_miss' multiply defined.
 
 
-LaTeX Warning: Label `fig:dijkstra_d_miss_rate' multiply defined.
+LaTeX Warning: Label `fig:dijkstra_d_miss' multiply defined.
 
 
-LaTeX Warning: Label `sub@fig:dijkstra_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `fig:d_miss_rate_a7' multiply defined.
-
-
-LaTeX Warning: Label `fig:blowfish_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:blowfish_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `fig:dijkstra_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:dijkstra_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `fig:d_miss_rate_a7' multiply defined.
-
-
-LaTeX Warning: Label `fig:blowfish_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:blowfish_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `fig:dijkstra_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:dijkstra_d_miss_rate' multiply defined.
-
-
-LaTeX Warning: Label `fig:d_miss_rate_a7' multiply defined.
-
-
-LaTeX Warning: Label `fig:blowfish_ipc' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:blowfish_ipc' multiply defined.
-
-
-LaTeX Warning: Label `fig:dijkstra_ipc' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:dijkstra_ipc' multiply defined.
-
-
-LaTeX Warning: Label `fig:blowfish_cpi' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:blowfish_cpi' multiply defined.
-
-
-LaTeX Warning: Label `fig:dijkstra_cpi' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:dijkstra_cpi' multiply defined.
+LaTeX Warning: Label `sub@fig:dijkstra_d_miss' multiply defined.
 
 )
 \openout1 = `relatorio.aux'.
@@ -454,170 +397,119 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 119.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 112.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 11.39996pt on input line 119.
+(Font)              scaled to size 11.39996pt on input line 112.
  [2]
-Overfull \hbox (20.57208pt too wide) in paragraph at lines 155--156
+Overfull \hbox (20.57208pt too wide) in paragraph at lines 148--149
 []\T1/ppl/m/n/10.95 Dijkstra et Blow-fish ont des pro-fils d'ins-truc-tions si-mi-laires (do-mi-nance d'In-tAlu et Mem-Read/Write),
  []
 
-
-Overfull \hbox (0.64738pt too wide) in paragraph at lines 173--192
-[][] 
+<./figures/figures_A7/combined_ipc.png, id=14, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/combined_ipc.png Graphic file (type png)
+<use ./figures/figures_A7/combined_ipc.png>
+Package pdftex.def Info: ./figures/figures_A7/combined_ipc.png  used on input line 197.
+(pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
+[3]
+<./figures/figures_A7/combined_i_miss_rate.png, id=19, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/combined_i_miss_rate.png Graphic file (type png)
+<use ./figures/figures_A7/combined_i_miss_rate.png>
+Package pdftex.def Info: ./figures/figures_A7/combined_i_miss_rate.png  used on input line 206.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A7/combined_d_miss_rate.png, id=20, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/combined_d_miss_rate.png Graphic file (type png)
+<use ./figures/figures_A7/combined_d_miss_rate.png>
+Package pdftex.def Info: ./figures/figures_A7/combined_d_miss_rate.png  used on input line 213.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A7/combined_l2_miss_rate.png, id=21, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/combined_l2_miss_rate.png Graphic file (type png)
+<use ./figures/figures_A7/combined_l2_miss_rate.png>
+Package pdftex.def Info: ./figures/figures_A7/combined_l2_miss_rate.png  used on input line 225.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+<./figures/figures_A7/combined_branch_mispred_rate.png, id=22, 462.528pt x 346.896pt>
+File: ./figures/figures_A7/combined_branch_mispred_rate.png Graphic file (type png)
+<use ./figures/figures_A7/combined_branch_mispred_rate.png>
+Package pdftex.def Info: ./figures/figures_A7/combined_branch_mispred_rate.png  used on input line 232.
+(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
+ [4 <./figures/figures_A7/combined_ipc.png> <./figures/figures_A7/combined_i_miss_rate.png> <./figures/figures_A7/combined_d_miss_rate.png>]
+Overfull \hbox (24.4178pt too wide) in paragraph at lines 254--255
+[]\T1/ppl/b/n/10.95 Conclusion : \T1/ppl/m/n/10.95 Pour le Cor-tex A7, la confi-gu-ra-tion \T1/ppl/b/n/10.95 8kB \T1/ppl/m/n/10.95 offre le meilleur com-pro-mis per-for-mance/surface
  []
 
-<./figures/figures_A7/blowfish_ipc.png, id=14, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/blowfish_ipc.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_ipc.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_ipc.png  used on input line 200.
+<./figures/figures_A15/combined_ipc.png, id=29, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/combined_ipc.png Graphic file (type png)
+<use ./figures/figures_A15/combined_ipc.png>
+Package pdftex.def Info: ./figures/figures_A15/combined_ipc.png  used on input line 267.
+(pdftex.def)             Requested size: 362.77264pt x 272.09163pt.
+[5 <./figures/figures_A7/combined_l2_miss_rate.png> <./figures/figures_A7/combined_branch_mispred_rate.png>]
+<./figures/figures_A15/combined_i_miss_rate.png, id=36, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/combined_i_miss_rate.png Graphic file (type png)
+<use ./figures/figures_A15/combined_i_miss_rate.png>
+Package pdftex.def Info: ./figures/figures_A15/combined_i_miss_rate.png  used on input line 276.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/dijkstra_ipc.png, id=16, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/dijkstra_ipc.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_ipc.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_ipc.png  used on input line 207.
+<./figures/figures_A15/combined_d_miss_rate.png, id=37, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/combined_d_miss_rate.png Graphic file (type png)
+<use ./figures/figures_A15/combined_d_miss_rate.png>
+Package pdftex.def Info: ./figures/figures_A15/combined_d_miss_rate.png  used on input line 283.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-[3]
-<./figures/figures_A7/blowfish_cpi.png, id=20, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/blowfish_cpi.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_cpi.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_cpi.png  used on input line 221.
+<./figures/figures_A15/combined_l2_miss_rate.png, id=38, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/combined_l2_miss_rate.png Graphic file (type png)
+<use ./figures/figures_A15/combined_l2_miss_rate.png>
+Package pdftex.def Info: ./figures/figures_A15/combined_l2_miss_rate.png  used on input line 295.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/dijkstra_cpi.png, id=21, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/dijkstra_cpi.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_cpi.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_cpi.png  used on input line 228.
+<./figures/figures_A15/combined_branch_mispred_rate.png, id=39, 462.528pt x 346.896pt>
+File: ./figures/figures_A15/combined_branch_mispred_rate.png Graphic file (type png)
+<use ./figures/figures_A15/combined_branch_mispred_rate.png>
+Package pdftex.def Info: ./figures/figures_A15/combined_branch_mispred_rate.png  used on input line 302.
 (pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/blowfish_i_miss_rate.png, id=22, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/blowfish_i_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_i_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_i_miss_rate.png  used on input line 241.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/dijkstra_i_miss_rate.png, id=23, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/dijkstra_i_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_i_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_i_miss_rate.png  used on input line 248.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
- [4 <./figures/figures_A7/blowfish_ipc.png> <./figures/figures_A7/dijkstra_ipc.png> <./figures/figures_A7/blowfish_cpi.png> <./figures/figures_A7/dijkstra_cpi.png>]
-<./figures/figures_A7/blowfish_d_miss_rate.png, id=31, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/blowfish_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_d_miss_rate.png  used on input line 260.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/dijkstra_d_miss_rate.png, id=32, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/dijkstra_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_d_miss_rate.png  used on input line 267.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/blowfish_l2_miss_rate.png, id=33, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/blowfish_l2_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_l2_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_l2_miss_rate.png  used on input line 279.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/dijkstra_l2_miss_rate.png, id=34, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/dijkstra_l2_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_l2_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_l2_miss_rate.png  used on input line 286.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/blowfish_branch_mispred_rate.png, id=35, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/blowfish_branch_mispred_rate.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_branch_mispred_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_branch_mispred_rate.png  used on input line 298.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A7/dijkstra_branch_mispred_rate.png, id=36, 462.528pt x 346.896pt>
-File: ./figures/figures_A7/dijkstra_branch_mispred_rate.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_branch_mispred_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_branch_mispred_rate.png  used on input line 305.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
- [5 <./figures/figures_A7/blowfish_i_miss_rate.png> <./figures/figures_A7/dijkstra_i_miss_rate.png> <./figures/figures_A7/blowfish_d_miss_rate.png> <./figures/figures_A7/dijkstra_d_miss_rate.png> <./figures/figures_A7/blowfish_l2_miss_rate.png> <./figures/figures_A7/dijkstra_l2_miss_rate.png>]
-File: ./figures/figures_A7/blowfish_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_d_miss_rate.png  used on input line 317.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-File: ./figures/figures_A7/dijkstra_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_d_miss_rate.png  used on input line 324.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-File: ./figures/figures_A7/blowfish_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_d_miss_rate.png  used on input line 336.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-File: ./figures/figures_A7/dijkstra_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_d_miss_rate.png  used on input line 343.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-File: ./figures/figures_A7/blowfish_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/blowfish_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/blowfish_d_miss_rate.png  used on input line 355.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-File: ./figures/figures_A7/dijkstra_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A7/dijkstra_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A7/dijkstra_d_miss_rate.png  used on input line 362.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
- [6 <./figures/figures_A7/blowfish_branch_mispred_rate.png> <./figures/figures_A7/dijkstra_branch_mispred_rate.png>]
-<./figures/figures_A15/blowfish_ipc.png, id=51, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/blowfish_ipc.png Graphic file (type png)
-<use ./figures/figures_A15/blowfish_ipc.png>
-Package pdftex.def Info: ./figures/figures_A15/blowfish_ipc.png  used on input line 380.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/dijkstra_ipc.png, id=52, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/dijkstra_ipc.png Graphic file (type png)
-<use ./figures/figures_A15/dijkstra_ipc.png>
-Package pdftex.def Info: ./figures/figures_A15/dijkstra_ipc.png  used on input line 387.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/blowfish_cpi.png, id=53, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/blowfish_cpi.png Graphic file (type png)
-<use ./figures/figures_A15/blowfish_cpi.png>
-Package pdftex.def Info: ./figures/figures_A15/blowfish_cpi.png  used on input line 399.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/dijkstra_cpi.png, id=54, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/dijkstra_cpi.png Graphic file (type png)
-<use ./figures/figures_A15/dijkstra_cpi.png>
-Package pdftex.def Info: ./figures/figures_A15/dijkstra_cpi.png  used on input line 406.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
- [7 <./figures/figures_A15/blowfish_ipc.png> <./figures/figures_A15/dijkstra_ipc.png>]
-<./figures/figures_A15/blowfish_i_miss_rate.png, id=61, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/blowfish_i_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A15/blowfish_i_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/blowfish_i_miss_rate.png  used on input line 418.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/dijkstra_i_miss_rate.png, id=62, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/dijkstra_i_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A15/dijkstra_i_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/dijkstra_i_miss_rate.png  used on input line 425.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/blowfish_d_miss_rate.png, id=63, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/blowfish_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A15/blowfish_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/blowfish_d_miss_rate.png  used on input line 437.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/dijkstra_d_miss_rate.png, id=64, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/dijkstra_d_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A15/dijkstra_d_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/dijkstra_d_miss_rate.png  used on input line 444.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/blowfish_l2_miss_rate.png, id=65, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/blowfish_l2_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A15/blowfish_l2_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/blowfish_l2_miss_rate.png  used on input line 456.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/dijkstra_l2_miss_rate.png, id=66, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/dijkstra_l2_miss_rate.png Graphic file (type png)
-<use ./figures/figures_A15/dijkstra_l2_miss_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/dijkstra_l2_miss_rate.png  used on input line 463.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
- [8 <./figures/figures_A15/blowfish_cpi.png> <./figures/figures_A15/dijkstra_cpi.png> <./figures/figures_A15/blowfish_i_miss_rate.png> <./figures/figures_A15/dijkstra_i_miss_rate.png> <./figures/figures_A15/blowfish_d_miss_rate.png> <./figures/figures_A15/dijkstra_d_miss_rate.png>]
-<./figures/figures_A15/blowfish_branch_mispred_rate.png, id=76, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/blowfish_branch_mispred_rate.png Graphic file (type png)
-<use ./figures/figures_A15/blowfish_branch_mispred_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/blowfish_branch_mispred_rate.png  used on input line 475.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
-<./figures/figures_A15/dijkstra_branch_mispred_rate.png, id=77, 462.528pt x 346.896pt>
-File: ./figures/figures_A15/dijkstra_branch_mispred_rate.png Graphic file (type png)
-<use ./figures/figures_A15/dijkstra_branch_mispred_rate.png>
-Package pdftex.def Info: ./figures/figures_A15/dijkstra_branch_mispred_rate.png  used on input line 482.
-(pdftex.def)             Requested size: 232.17242pt x 174.13039pt.
- [9 <./figures/figures_A15/blowfish_l2_miss_rate.png> <./figures/figures_A15/dijkstra_l2_miss_rate.png> <./figures/figures_A15/blowfish_branch_mispred_rate.png> <./figures/figures_A15/dijkstra_branch_mispred_rate.png>] (./relatorio.aux)
+ [6 <./figures/figures_A15/combined_ipc.png> <./figures/figures_A15/combined_i_miss_rate.png> <./figures/figures_A15/combined_d_miss_rate.png>]
+Overfull \hbox (12.82297pt too wide) in paragraph at lines 313--314
+\T1/ppl/m/n/10.95 phis-ti-qué, at-teint des IPC si-gni-fi-ca-ti-ve-ment plus éle-vés que le A7. Les deux ap-pli-ca-tions montrent
+ []
+
+
+Overfull \hbox (3.37271pt too wide) in paragraph at lines 324--325
+[]\T1/ppl/b/n/10.95 Conclusion : \T1/ppl/m/n/10.95 Pour le Cor-tex A15, la confi-gu-ra-tion op-ti-male dé-pend du trade-off per-for-mance/coût
+ []
+
+[7 <./figures/figures_A15/combined_l2_miss_rate.png> <./figures/figures_A15/combined_branch_mispred_rate.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./figures/figures_energy/dijkstra_energy_efficiency.png, id=56, 722.7pt x 433.62pt>
+File: ./figures/figures_energy/dijkstra_energy_efficiency.png Graphic file (type png)
+<use ./figures/figures_energy/dijkstra_energy_efficiency.png>
+Package pdftex.def Info: ./figures/figures_energy/dijkstra_energy_efficiency.png  used on input line 432.
+(pdftex.def)             Requested size: 232.17242pt x 139.30379pt.
+<./figures/figures_energy/blowfish_energy_efficiency.png, id=57, 722.7pt x 433.62pt>
+File: ./figures/figures_energy/blowfish_energy_efficiency.png Graphic file (type png)
+<use ./figures/figures_energy/blowfish_energy_efficiency.png>
+Package pdftex.def Info: ./figures/figures_energy/blowfish_energy_efficiency.png  used on input line 439.
+(pdftex.def)             Requested size: 232.17242pt x 139.30379pt.
+[8]
+Overfull \hbox (14.6288pt too wide) in paragraph at lines 454--455
+[]\T1/ppl/b/n/10.95 Dijkstra sur A15 \T1/ppl/m/n/10.95 : L'ef-fi-ca-cité éner-gé-tique conti-nue à aug-men-ter jus-qu'à 32 kB (0.00228 IPC/mW),
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 456.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+) [9 <./figures/figures_energy/dijkstra_energy_efficiency.png> <./figures/figures_energy/blowfish_energy_efficiency.png>] [10]
+Overfull \hbox (2.44185pt too wide) in paragraph at lines 577--578
+[]\T1/ppl/b/n/10.95 Pour les deux ap-pli-ca-tions sur A15 \T1/ppl/m/n/10.95 : 32 kB est l'op-ti-mum ob-servé (sa-tu-ra-tion tar-dive, meilleure
+ []
+
+[11]
+Overfull \hbox (51.87762pt too wide) in paragraph at lines 644--645
+[]\T1/ppl/m/n/10.95 Construire des gra-phiques 3D ou des Pa-reto fron-tiers mon-trant le trade-off per-for-mance/énergie/surface
+ []
+
+
+Overfull \hbox (26.74834pt too wide) in paragraph at lines 648--649
+[]\T1/ppl/m/n/10.95 Calculer des mé-triques nor-ma-li-sées (ef-fi-ca-cité éner-gé-tique IPC/mW, ef-fi-ca-cité sur-fa-cique IPC/mm\TS1/ppl/m/n/10.95 ²\T1/ppl/m/n/10.95 )
+ []
+
+[12] (./relatorio.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -628,18 +520,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7756 strings out of 476153
- 132063 string characters out of 5794327
- 1942975 words of memory out of 5000000
- 29668 multiletter control sequences out of 15000+600000
- 585059 words of font info for 76 fonts, out of 8000000 for 9000
+ 7695 strings out of 476153
+ 127871 string characters out of 5794327
+ 1951975 words of memory out of 5000000
+ 29596 multiletter control sequences out of 15000+600000
+ 592625 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 67i,12n,77p,558b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on relatorio.pdf (9 pages, 951761 bytes).
+ 67i,12n,77p,613b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on relatorio.pdf (12 pages, 686185 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
