@@ -100,6 +100,61 @@ python3 /home/julia/gem5/ES201-GIT/TP4/l1_sweep.py plot \
   --out-dir /home/julia/gem5/ES201-GIT/TP4/Projet/results_l1/figures_A7
 ```
 
+## Understanding the plotted metrics
+
+The l1_sweep.py script generates plots for the following performance metrics:
+
+### IPC (Instructions Per Cycle)
+- Number of instructions executed per clock cycle
+- **Higher is better** → more efficient processor
+- Typical range: 0.5 to 2.0 for out-of-order processors
+- Shows how well the CPU exploits instruction-level parallelism
+
+### CPI (Cycles Per Instruction)
+- Number of clock cycles needed to execute one instruction
+- **Lower is better** → fewer wasted cycles
+- Inverse of IPC: `CPI = 1 / IPC`
+- Increases with cache misses, branch mispredictions, and data hazards
+
+### I$ miss rate (Instruction Cache miss rate)
+- Percentage of instruction cache (L1I) accesses that result in a miss
+- **Lower is better** → fewer stalls waiting for instructions
+- Example: 0.02 = 2% miss rate
+- Affects fetch bandwidth and instruction supply to the pipeline
+
+### D$ miss rate (Data Cache miss rate)
+- Percentage of data cache (L1D) accesses that result in a miss
+- **Lower is better** → fewer stalls waiting for data
+- Example: 0.05 = 5% miss rate
+- Critical for load/store intensive workloads
+
+### L2 miss rate
+- Percentage of L2 cache accesses that miss (and go to main memory)
+- **Lower is better** → fewer accesses to slow DRAM
+- More critical than L1 misses due to higher memory latency penalty
+- Shows effectiveness of the cache hierarchy
+
+### Branch mispred rate (Branch misprediction rate)
+- Percentage of branch instructions predicted incorrectly by the branch predictor
+- **Lower is better** → fewer pipeline flushes
+- Depends on branch predictor algorithm (BiMode in this configuration)
+- Impacts control flow intensive code more severely
+
+### Sim seconds (Simulated time)
+- Real (simulated) time the program would take to execute on the hardware
+- **Lower is better** → faster program execution
+- Depends on clock frequency (1 GHz by default in gem5)
+- Represents end-to-end performance including all stalls and delays
+
+### Expected relationship with L1 size
+
+As L1 cache size increases:
+- ↓ Miss rates (I$, D$, L2)
+- ↑ IPC / ↓ CPI
+- ↓ Simulated execution time
+
+However, beyond a certain point, increasing L1 size yields diminishing returns when the working set fits entirely in the cache.
+
 ### extract_inst_class_percentages.py
 
 This script computes the percentage of each instruction class in a compiled program.
