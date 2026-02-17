@@ -9,8 +9,10 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: ./TP5/docs/report/report.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v6
-        with:
-          name: PDF
-          path: ./TP5/docs/report/report.pdf
+      - name: Commit e Push do PDF
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add report.pdf
+          git commit -m "Auto: Updating compiled pdf" || echo "No updates"
+          git push
