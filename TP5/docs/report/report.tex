@@ -33,37 +33,12 @@
 
 \maketitle
 
-\section*{Analyse théorique de cohérence de cache}
+\input{sections/section_1.tex}
 
-\section*{Q1 : En considérant que chaque thread s’exécute sur un processeur dans une architecture
-de type multicoeurs à base de bus et 1 niveau de cache (comme décrit Figure 21), décrivez le
-comportement de la hiérarchie mémoire et de la cohérence des caches pour l’algorithme de
-multiplication de matrices. On supposera que le thread principal se trouve sur le processeur
-d’indice 1.}
+\input{sections/section_2.tex}
 
-\section*{Paramètres de l'architecture multicoeurs}
+\input{sections/section_3.tex}
 
-\section*{Q2 : Examinez le fichier de déclaration d’un élément de type « processeur superscalaire out-
-of-order », et présentez sous forme de tableau cinq paramètres configurables de ce type de
-processeur avec leur valeur par défaut. Choisissez de préférence des paramètres étudiés lors
-des séances TD/TP précédentes. Le fichier à consulter est le suivant:}
-
-\begin{verbatim}
-    $GEM5/src/cpu/o3/O3CPU.py
-\end{verbatim}
-
-\section*{Q3 : Examinez le fichier d’options de la plateforme se.py, puis déterminez et présentez sous
-forme de tableau les valeurs par défaut des paramètres suivants :}
-\begin{itemize}
-    \item Cache de données de niveau 1 : associativité, taille du cache, taille de la ligne
-    \item Cache d’instructions de niveau 1 : associativité, taille du cache, taille de la ligne
-    \item Cache unifié de niveau 2 : associativité, taille du cache, taille de la ligne
-\end{itemize}
-
-Le fichier d’options à consulter est le suivant :
-
-\begin{verbatim}
-    $GEM5/configs/common/Options.py
-\end{verbatim}
+\input{sections/section_4.tex}
 
 \end{document}
