@@ -8,7 +8,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
-          root_file: ./TP5/docs/report/report.tex
+          root_file: report.tex
           working_directory: ./TP5/docs/report
       - name: Commit e Push do PDF
         run: |
