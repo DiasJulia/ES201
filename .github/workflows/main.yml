@@ -13,4 +13,4 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: PDF
-          path: ./TP5/docs/report/report.pdf
+          path: report.pdf
