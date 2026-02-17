@@ -1,0 +1,16 @@
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout GitHub Repository
+        uses: actions/checkout@v6
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: ./TP5/docs/report/report.tex
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v6
+        with:
+          name: PDF
+          path: ./TP5/docs/report/report.pdf
