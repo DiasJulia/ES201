@@ -34,7 +34,13 @@ for W in "${WIDTH_LIST[@]}"; do
 
     echo "=== Run: W=$W, T=$T, m=$MATRIX_SIZE -> $OUTDIR ==="
 
-    echo "Comando: OMP_NUM_THREADS=$T $GEM5_BIN --outdir=$OUTDIR $GEM5_CONFIG --caches --l2cache -n $T --cpu-type=detailed --o3-width=$W -c $APP_BIN -o \"$T $MATRIX_SIZE\""
+    echo "Comando: OMP_NUM_THREADS='$T' \
+    '$GEM5_BIN' --outdir='$OUTDIR' \
+      '$GEM5_CONFIG' \
+      --caches --l2cache \
+      -n '$T' --cpu-type=detailed --o3-width='$W' \
+      -c $GEM5_ROOT/../test_omp -o '$T $MATRIX_SIZE' \
+      >'$OUTDIR/console.out' 2>'$OUTDIR/console.err'"
 
     OMP_NUM_THREADS="$T" \
     "$GEM5_BIN" --outdir="$OUTDIR" \
@@ -53,3 +59,4 @@ for W in "${WIDTH_LIST[@]}"; do
     fi
   done
 done
+
