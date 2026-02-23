@@ -7,9 +7,9 @@ multiplication de matrices. On supposera que le thread principal se trouve sur l
 d’indice 1.}
 
 \begin{itemize}
-    \item \textbf{Matrice A :} Chaque ligne est stockée dans le cache d’un processeur différent chargé depuis la mémoire principale.
+    \item \textbf{Matrice A :} Chaque ligne est stockée dans le cache d’un processeur différent chargée depuis la mémoire principale.
     \item Ainsi, chaque processeur a une ligne différente donc ne communique pas avec les autres, on a donc peu d'incohérence.
-    \item Plus on a de thread moins on a d'incohérence.
+    \item Plus on a de threads moins on a d'incohérence.
     \item \textbf{Matrice B :} Elle est lue et stockée dans chaque thread pour calculer $C$ mais elle n’est pas modifiée donc nous n’avons pas non plus d'incohérence.
     \item \textbf{Matrice C :} Par définition du produit de matrice chaque ligne de $C$ correspond au produit de la ligne de $A$ correspondante avec $B$, ainsi, chaque processus écrit des lignes différentes de $C$ donc on n’a pas de problème de cohérence.
 \end{itemize}
