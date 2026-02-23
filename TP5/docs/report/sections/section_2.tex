@@ -1,26 +1,8 @@
+\section*{Architecture multicoeurs avec des processeurs superscalaires in-order (Cortex A7)}
 
-\documentclass[12pt, a4paper]{article}
-
-% --- Paquetages de base ---
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{amsmath} % Pour les formules mathématiques
-\usepackage{graphicx} % Pour les images
-\usepackage{booktabs} % Pour des tableaux élégants
-\usepackage{tabularx} % Pour des tableaux à largeur fixe
-\usepackage{geometry} % Pour les marges
-\geometry{margin=2.5cm}
-
-\title{ES201 TP5 (à mettre en commun)}
-\author{Martin Brun}
-\date{February 2026}
-
-\begin{document}
-
-\maketitle
-
-\section*{Question 4 et 5 : Quel est le processeur exécutant toujours le plus grand nombre de cycles ?}
+\subsection*{Q4 : Déterminez quel est le processeur exécutant toujours le plus grand nombre de
+cycles. Expliquez pourquoi. Expliquez également pourquoi l’analyse du nombre de cycles sur
+ce processeur revient à analyser le nombre total de cycles d’exécution de l’application.}
 
 L'expérience (voir code) nous montre que c'est toujours \texttt{cpu0}. En effet, cela se comprend car dans une application OpenMP, l'exécution se déroule en deux phases :
 \begin{itemize}
@@ -30,7 +12,12 @@ L'expérience (voir code) nous montre que c'est toujours \texttt{cpu0}. En effet
 
 \texttt{cpu0} cumule donc les deux charges (séquentielle + une part de la parallèle), ce qui lui donne systématiquement un nombre de cycles plus élevé que les autres processeurs.
 
-\subsection*{Tableau des nombres de cycles maximums}
+À cause de la \textbf{barrière de synchronisation} OpenMP située en fin de bloc parallèle : tous les threads doivent impérativement l'atteindre avant que le programme puisse poursuivre son exécution. La durée totale de l'application est donc déterminée par la durée du thread le plus lent (le "chemin critique"), qui est ici toujours \texttt{cpu0}.
+
+\subsection*{Q5 : Pour chaque configuration, quel est le nombre de cycles d’exécution de l’application
+? Vous pourrez présenter vos résultats sous forme de graphe 2 axes}
+
+\subsubsection*{Tableau des nombres de cycles maximums}
 
 \begin{center}
 \begin{tabularx}{\textwidth}{lX r}
@@ -51,7 +38,7 @@ L'expérience (voir code) nous montre que c'est toujours \texttt{cpu0}. En effet
 \begin{figure}[htbp]
     \centering
     \fbox{
-        \includegraphics[width=0.7\linewidth]{cycles.png} 
+        \includegraphics[width=0.7\linewidth]{./plots/cycles.png}
     }
     \caption{Courbe du nombre de cycle maximum (cpu0) en fonction du nombre de threads}
     \label{fig:ipc_speedup}
@@ -59,13 +46,7 @@ L'expérience (voir code) nous montre que c'est toujours \texttt{cpu0}. En effet
 
 \newpage
 
-% --- Question 4 ---
-\section*{Question 4 : Pourquoi l'analyse de cpu0 revient à analyser le temps total ?}
-
-À cause de la \textbf{barrière de synchronisation} OpenMP située en fin de bloc parallèle : tous les threads doivent impérativement l'atteindre avant que le programme puisse poursuivre son exécution. La durée totale de l'application est donc déterminée par la durée du thread le plus lent (le "chemin critique"), qui est ici toujours \texttt{cpu0}.
-
-% Q6
-\section*{Question 5 : Étude du SpeedUp}
+\subsection*{Q6 : Déduire le speedup par rapport à la configuration à 1 thread.}
 
 La formule du SpeedUp est donnée par : 
 \begin{equation}
@@ -93,7 +74,7 @@ La formule du SpeedUp est donnée par :
 \begin{figure}[htbp]
     \centering
     \fbox{
-        \includegraphics[width=0.7\linewidth]{speedup.png} 
+        \includegraphics[width=0.7\linewidth]{./plots/speedup.png}
     }
     \caption{Courbe du SpeedUp en fonction du nombre de threads}
     \label{fig:ipc_speedup}
@@ -101,7 +82,8 @@ La formule du SpeedUp est donnée par :
 
 \newpage
 
-\section*{Question 7 : IPC maximum pour chaque configuration}
+\subsection*{Q7 : En utilisant le nombre total d’instructions simulées, déterminez quelle est la valeur
+maximale de l’IPC pour chaque configuration ?}
 
 La formule de l'IPC (Instructions Per Cycle) est :
 \begin{equation}
@@ -131,7 +113,7 @@ Le nombre d'instructions \texttt{sim\_insts} reste constant quelle que soit la c
 \begin{figure}[htbp]
     \centering
     \fbox{
-        \includegraphics[width=0.7\linewidth]{ipc.png} 
+        \includegraphics[width=0.7\linewidth]{./plots/ipc.png}
     }
     \caption{Courbe de l'IPC en fonction du nombre de threads}
     \label{fig:ipc_speedup}
@@ -139,11 +121,9 @@ Le nombre d'instructions \texttt{sim\_insts} reste constant quelle que soit la c
 
 \newpage
 
-\section*{Question 8 : Discussion et interprétation}
+\subsection*{Q8 : Discussion et interprétation (max. 10 lignes).}
 
 D'après les résultats obtenus, on observe que le nombre de cycles de l'application diminue lorsque le nombre de threads augmente, ce qui se traduit par un speedup croissant. Cependant, ce speedup reste inférieur au speedup idéal (linéaire), ce qui s'explique par la loi d'Amdahl : une partie du code reste séquentielle (exécutée uniquement par cpu0) et constitue un goulot d'étranglement irréductible.
 On remarque également que l'IPC augmente avec le nombre de threads, ce qui est cohérent : cpu0 exécute le même nombre d'instructions en moins de cycles, donc son efficacité augmente. Les courbes de speedup et d'IPC sont corrélées car toutes deux sont inversement proportionnelles à cpu0.numCycles.
 
 Au-delà d'un certain nombre de threads (typiquement au-delà de m/4), le gain devient marginal : le surcoût de synchronisation aux barrières OpenMP et le déséquilibre de charge entre cpu0 et les autres CPUs limitent les gains. Pour une matrice de taille 64, la configuration optimale se situe donc entre 8 et 16 threads, au-delà desquels le speedup stagne.
-
-\end{document}
