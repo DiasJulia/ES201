@@ -1,25 +1,17 @@
 \section*{Architecture multicoeurs avec des processeurs superscalaires out-of-order (Cortex A15)}
+La campagne de mesures a été exécutée sur le serveur distant ENSTA (hôte \texttt{salle}) avec le modèle \texttt{DerivO3CPU} (Cortex-A15) en mode SE, avec caches L1+L2 activés. Pour garantir une exécution reproductible, nous avons utilisé \texttt{gem5.fast} ARM pré-compilé, le script de configuration \texttt{se\_a15.py}, ainsi que le binaire \texttt{test\_omp} synchronisé dans \texttt{tp5\_work}. Les paramètres explorés couvrent les largeurs \texttt{width} 2, 4 et 8, les nombres de threads OpenMP 1, 2, 4, 8 et 16, avec une taille de matrice fixée à 64.
 
-[Explicar tudo da metodologia de coleta e análise dos dados, incluindo os comandos usados para rodar as simulações e coletar os resultados. ]
-% # 1 thread
-% $GEM5/build/ARM/gem5.fast -d results_a15/o3_1t \
-%   $GEM5/configs/example/se.py --cpu-type=detailed --caches --l2cache \
-%   -n 1 -c ./test_omp -o "1 128"
+Nous avons rencontré des \texttt{segfault} intermittents sur plusieurs configurations, ce qui a nécessité des relances ciblées. Pour améliorer la robustesse, nous avons ajouté les variables d'environnement \texttt{OMP\_WAIT\_POLICY=ACTIVE} et \texttt{GOMP\_SPINCOUNT=1000000000}, afin de réduire les risques de blocage. De cette manière, nous avons pu collecter un ensemble de résultats plus complet, en executant la commande suivante pour chaque combinaison de paramètres :
+\begin{verbatim}
+OMP_NUM_THREADS=${T} OMP_WAIT_POLICY=ACTIVE GOMP_SPINCOUNT=1000000000 \
+$GEM5/build/ARM/gem5.fast \
+    --outdir=results/s64_w${W}_t${T} \
+    se_a15.py --cpu-type=detailed --o3-width=${W} --num-cpus=${T} \
+    --caches --l2cache \
+    -c ./test_omp -o "${T} 64"
+\end{verbatim}
 
-% # 2 threads
-% $GEM5/build/ARM/gem5.fast -d results_a15/o3_2t \
-%   $GEM5/configs/example/se.py --cpu-type=detailed --caches --l2cache \
-%   -n 2 -c ./test_omp -o "2 128"
-
-% # 4 threads
-% $GEM5/build/ARM/gem5.fast -d results_a15/o3_4t \
-%   $GEM5/configs/example/se.py --cpu-type=detailed --caches --l2cache \
-%   -n 4 -c ./test_omp -o "4 128"
-
-% # 8 threads
-% $GEM5/build/ARM/gem5.fast -d results_a15/o3_8t \
-%   $GEM5/configs/example/se.py --cpu-type=detailed --caches --l2cache \
-%   -n 8 -c ./test_omp -o "8 128"
+Le flux expérimental a été automatisé par un script de lancement global \texttt{run\_all.sh}, qui itère sur les différentes configurations, puis par un script de post-traitement \texttt{extract\_results.py} pour extraire les métriques pertinentes et générer les figures du rapport. Les indicateurs analysés incluent le temps d'exécution simulé (\texttt{sim\_seconds}), le nombre maximal de cycles (\texttt{cycles\_max\_cpu}), l'IPC maximal (\texttt{ipc\_max\_cpu}), le nombre total de ticks simulés (\texttt{sim\_ticks}) et le nombre total d'instructions exécutées (\texttt{insts\_max\_cpu}).
 
 \subsection*{Q9 : Pour chaque configuration, quel est le nombre de cycles d’exécution de
 l’application ? Vous pourrez présenter vos résultats sous forme de graphe 3 axes.}
@@ -34,20 +26,26 @@ l’application ? Vous pourrez présenter vos résultats sous forme de graphe 3 
 \hline
 \textbf{Width} & \textbf{1 thread} & \textbf{2 threads} & \textbf{4 threads} & \textbf{8 threads} & \textbf{16 threads} \\
 \hline
-2 voies & 0.000169 & 0.000115 & 0.000089 & 0.000075 & 0.000071 \\
-4 voies & 0.000116 & 0.000087 & N/A & 0.000066 & 0.000065 \\
-8 voies & 0.000114 & 0.000086 & 0.000072 & 0.000066 & N/A \\
+2 voies & 0.001151 & 0.000638 & 0.000382 & 0.000254 & 0.000196 \\
+4 voies & 0.000680 & 0.000398 & 0.000258 & 0.000188 & 0.000157 \\
+8 voies & 0.000665 & 0.000390 & 0.000253 & 0.000188 & 0.000158 \\
 \hline
 \end{tabular}
 \end{table}
 
-Les résultats montrent que :
-\begin{itemize}
-    \item Le temps d'exécution diminue avec l'augmentation du nombre de threads (parallelism).
-    \item Pour un nombre de threads donné, les configurations 4 et 8 voies sont en général plus rapides que 2 voies.
-    \item Le meilleur temps observé est \textbf{0.000065 s} (4 voies, 16 threads), contre \textbf{0.000169 s} (2 voies, 1 thread).
-    \item Certaines combinaisons sont absentes (\texttt{N/A}) : 4 voies / 4 threads et 8 voies / 16 threads.
-\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{plots/q9_m64_sim_seconds_2d.png}
+\caption{Temps simulé en 2D (threads vs largeur O3).}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.80\linewidth]{plots/q9_m64_cycles_3d.png}
+\caption{Cycles maximaux en représentation 3D.}
+\end{figure}
+
+Les résultats montrent que le gain principal vient du passage de 1 à 4 threads ; au-delà, la pente se réduit nettement, ce qui indique une saturation progressive. À charge identique, la configuration \textbf{2 voies} reste systématiquement derrière \textbf{4/8 voies}, ce qui confirme l'apport de l'élargissement du coeur pour exploiter l'ILP. L'écart entre \textbf{4 voies} et \textbf{8 voies} devient toutefois faible à fort parallélisme (8--16 threads), ce qui suggère que la limite se déplace du front-end vers la hiérarchie mémoire et la synchronisation. Le point le plus lent observé est \textbf{2 voies / 1 thread} (0.001151 s), tandis que le plus rapide est \textbf{4 voies / 16 threads} (0.000157 s), très proche de \textbf{8 voies / 16 threads} (0.000158 s).
 
 \textit{Remarque :} Le fichier de résultats inclut aussi \texttt{sim\_ticks}, \texttt{cycles\_max} et \texttt{insts\_max}, ce qui permet d'analyser les tendances en cycles en plus du temps simulé.
 
@@ -65,20 +63,20 @@ Le \textbf{speedup} est défini comme le rapport du temps de base (1 thread) au 
 \hline
 \textbf{Width} & \textbf{2} & \textbf{4} & \textbf{8} & \textbf{16} \\
 \hline
-2 voies & 1.47 & 1.90 & 2.25 & 2.38 \\
-4 voies & 1.33 & N/A & 1.76 & 1.78 \\
-8 voies & 1.33 & 1.58 & 1.73 & N/A \\
+2 voies & 1.80 & 3.01 & 4.53 & 5.87 \\
+4 voies & 1.71 & 2.64 & 3.62 & 4.33 \\
+8 voies & 1.71 & 2.63 & 3.54 & 4.21 \\
 \hline
 \end{tabular}
 \end{table}
 
-\begin{itemize}
-    \item Le speedup est \textbf{sub-linéaire} : il ne croît pas proportionnellement au nombre de threads.
-    \item En 2 voies, le speedup progresse jusqu'à \textbf{2.38×} à 16 threads.
-    \item En 4 voies, on observe \textbf{1.78×} à 16 threads, avec une donnée manquante à 4 threads.
-    \item En 8 voies, le speedup atteint \textbf{1.73×} à 8 threads (valeur 16 threads indisponible).
-    \item Les écarts entre largeurs et la saturation du gain confirment une contention sur les ressources partagées (cache/mémoire/synchronisation).
-\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{plots/q10_m64_speedup_2d.png}
+\caption{Accélération en fonction du nombre de threads.}
+\end{figure}
+
+Le speedup reste \textbf{sub-linéaire} sur l'ensemble des configurations : il augmente avec le nombre de threads, mais pas de manière proportionnelle. En \textbf{2 voies}, le gain atteint \textbf{5.87×} à 16 threads, contre \textbf{4.33×} en \textbf{4 voies} et \textbf{4.21×} en \textbf{8 voies}. Ce résultat s'explique par un effet de base : la configuration 2 voies part d'un cas 1-thread plus lent, ce qui amplifie le speedup relatif, alors qu'en valeur absolue les configurations 4 et 8 voies restent les plus rapides.
 
 \subsection*{Q11 : En utilisant le nombre total d'instructions simulées, déterminez quelle est la valeur
 maximale de l'IPC pour chaque configuration ?}
@@ -92,24 +90,23 @@ L'\textbf{IPC (Instructions Per Cycle)} mesure le parallélisme au niveau des in
 \hline
 \textbf{Width} & \textbf{1 thread} & \textbf{2 threads} & \textbf{4 threads} & \textbf{8 threads} & \textbf{16 threads} \\
 \hline
-2 voies & 1.351054 & 1.800073 & 1.751922 & 1.686834 & 1.578735 \\
-4 voies & 1.963032 & 3.199570 & N/A & 2.785343 & 2.659370 \\
-8 voies & 2.000776 & 3.379401 & 3.345791 & 3.286575 & N/A \\
+2 voies & 1.784232 & 1.927467 & 1.923079 & 1.910628 & 1.880036 \\
+4 voies & 3.020259 & 3.537798 & 3.514918 & 3.457122 & 3.282794 \\
+8 voies & 3.090452 & 3.617589 & 3.598638 & 3.677927 & 3.808231 \\
 \hline
 \end{tabular}
 \end{table}
 
-\begin{itemize}
-    \item L'IPC varie avec la largeur : à 1 thread, il passe de \textbf{1.351} (2 voies) à \textbf{2.001} (8 voies).
-    \item En multi-thread, les IPC maximales les plus élevées sont obtenues en 8 voies (jusqu'à \textbf{3.380} à 2 threads).
-    \item Les résultats 4 voies et 8 voies sont proches à partir de 8 threads (\textasciitilde2.79 vs \textasciitilde3.29), ce qui suggère une saturation progressive.
-    \item Deux combinaisons restent indisponibles dans les mesures (4 voies/4 threads et 8 voies/16 threads).
-\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{plots/q11_m64_ipc_2d.png}
+\caption{IPC maximal en fonction du nombre de threads.}
+\end{figure}
+
+L'IPC augmente nettement avec la largeur du coeur : dès 1 thread, les configurations 4 et 8 voies sont largement au-dessus de 2 voies. Le meilleur IPC observé est \textbf{3.808} (8 voies, 16 threads), ce qui confirme un meilleur remplissage du pipeline pour les coeurs les plus larges. À l'inverse, en 2 voies l'IPC plafonne autour de 1.9, tandis qu'en 4/8 voies il reste dans la plage 3.2--3.8. L'écart entre 4 et 8 voies devient néanmoins modéré sur plusieurs points, ce qui suggère qu'une partie du potentiel supplémentaire est absorbée par la contention mémoire et la synchronisation OpenMP.
 
 \subsection*{Q12 : Discussion et interprétation (max. 10 lignes)}
 
-L'étude des performances du DerivO3CPU avec différents widths et nombres de threads révèle plusieurs points clés :
+Les résultats confirment deux effets complémentaires : l'augmentation de la largeur du coeur améliore fortement l'IPC, alors que l'augmentation du nombre de threads réduit le temps total jusqu'à une zone de saturation. Le rapprochement des performances entre 4 et 8 voies à fort parallélisme indique que le goulot d'étranglement se déplace vers la mémoire, la cohérence de cache et la synchronisation OpenMP. 
 
-\textbf{2) Parallelism limité par la contention :} Le speedup reste sub-linéaire pour toutes les largeurs, ce qui indique des limites côté mémoire/cache/synchronisation malgré l'augmentation du nombre de threads.
-
-\textbf{3) Données partielles :} Deux points expérimentaux manquent (4 voies/4 threads et 8 voies/16 threads). Les tendances globales restent néanmoins cohérentes : gains nets entre 2 et 4/8 voies, puis saturation progressive aux forts niveaux de parallélisme.
+La campagne reste toutefois limitée par des \texttt{segfault} intermittents observés sur plusieurs combinaisons, ce qui a imposé des relances ciblées. Les tendances globales restent cohérentes, mais une validation plus robuste demanderait des répétitions systématiques et un profilage mémoire/cache plus fin.
