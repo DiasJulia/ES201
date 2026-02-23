@@ -1,0 +1,16 @@
+matrix,threads,width,ipc_max_cpu,cycles_max_cpu,insts_max_cpu,sim_ticks,sim_seconds,run_dir,status
+64,1,2,1.784232,2302499.0,4108193.0,1151249000.0,0.001151,/auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t1/stats.txt,OK
+64,2,2,1.927467,1276965.0,2118995.0,638482000.0,0.000638,/auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t2/stats.txt,OK
+64,4,2,1.923079,763177.0,1122999.0,381588000.0,0.000382,/auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t4/stats.txt,OK
+64,8,2,1.910628,507991.0,626339.0,253995000.0,0.000254,/auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t8/stats.txt,OK
+64,16,2,1.880036,392751.0,382580.0,196375000.0,0.000196,/auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t16/stats.txt,OK
+64,1,4,3.020259,1360212.0,4108193.0,680105500.0,0.00068,/auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t1/stats.txt,OK
+64,2,4,3.537798,796548.0,2118321.0,398273500.0,0.000398,/auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t2/stats.txt,OK
+64,4,4,3.514918,515218.0,1121977.0,257608500.0,0.000258,/auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t4/stats.txt,OK
+64,8,4,3.457122,376268.0,626001.0,188133500.0,0.000188,/auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t8/stats.txt,OK
+64,16,4,3.282794,313362.0,384336.0,156680500.0,0.000157,/auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t16/stats.txt,OK
+64,1,8,3.090452,1329318.0,4108193.0,664658500.0,0.000665,/auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t1/stats.txt,OK
+64,2,8,3.617589,780086.0,2118929.0,390042500.0,0.00039,/auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t2/stats.txt,OK
+64,4,8,3.598638,505576.0,1121977.0,252787500.0,0.000253,/auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t4/stats.txt,OK
+64,8,8,3.677927,376542.0,632382.0,188270500.0,0.000188,/auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t8/stats.txt,OK
+64,16,8,3.808231,315400.0,394904.0,157699500.0,0.000158,/auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t16/stats.txt,OK
