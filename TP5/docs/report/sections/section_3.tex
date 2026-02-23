@@ -1,5 +1,6 @@
 \section*{Architecture multicoeurs avec des processeurs superscalaires out-of-order (Cortex A15)}
 
+[Explicar tudo da metodologia de coleta e análise dos dados, incluindo os comandos usados para rodar as simulações e coletar os resultados. ]
 % # 1 thread
 % $GEM5/build/ARM/gem5.fast -d results_a15/o3_1t \
 %   $GEM5/configs/example/se.py --cpu-type=detailed --caches --l2cache \
@@ -26,7 +27,7 @@ l’application ? Vous pourrez présenter vos résultats sous forme de graphe 3 
 \textbf{Temps d'exécution simulé (sim\_seconds)} en fonction du nombre de threads et de la largeur du processeur :
 
 % Table with all configurations
-\begin{table}[h]
+\begin{table}[h] 
 \centering
 \caption{Temps d'exécution (sim\_seconds) par largeur de processeur et nombre de threads.}
 \begin{tabular}{|c|c|c|c|c|c|}

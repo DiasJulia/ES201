@@ -1,78 +1,123 @@
-=== ./result/m30/stats_o3_w2_t16_m30.txt ===
-sim_seconds                                  0.000071                       # Number of seconds simulated
-ipc_max 1.578735
-cycles_max 141313
-insts_max 72060
-sim_ticks                                    70656000                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w2_t1_m30.txt ===
-sim_seconds                                  0.000169                       # Number of seconds simulated
-ipc_max 1.351054
-cycles_max 337657
-insts_max 456193
-sim_ticks                                   168828000                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w2_t2_m30.txt ===
-sim_seconds                                  0.000115                       # Number of seconds simulated
-ipc_max 1.800073
-cycles_max 229329
-insts_max 249338
-sim_ticks                                   114664000                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w2_t4_m30.txt ===
-sim_seconds                                  0.000089                       # Number of seconds simulated
-ipc_max 1.751922
-cycles_max 178293
-insts_max 151641
-sim_ticks                                    89146000                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w2_t8_m30.txt ===
-sim_seconds                                  0.000075                       # Number of seconds simulated
-ipc_max 1.686834
-cycles_max 150665
-insts_max 97525
-sim_ticks                                    75332000                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w4_t16_m30.txt ===
-sim_seconds                                  0.000065                       # Number of seconds simulated
-ipc_max 2.659370
-cycles_max 129656
-insts_max 72865
-sim_ticks                                    64827500                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w4_t1_m30.txt ===
-sim_seconds                                  0.000116                       # Number of seconds simulated
-ipc_max 1.963032
-cycles_max 232392
-insts_max 456193
-sim_ticks                                   116195500                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w4_t2_m30.txt ===
-sim_seconds                                  0.000087                       # Number of seconds simulated
-ipc_max 3.199570
-cycles_max 174252
-insts_max 249930
-sim_ticks                                    87125500                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w4_t8_m30.txt ===
-sim_seconds                                  0.000066                       # Number of seconds simulated
-ipc_max 2.785343
-cycles_max 132522
-insts_max 98176
-sim_ticks                                    66260500                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w8_t1_m30.txt ===
-sim_seconds                                  0.000114                       # Number of seconds simulated
-ipc_max 2.000776
-cycles_max 228008
-insts_max 456193
-sim_ticks                                   114003500                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w8_t2_m30.txt ===
-sim_seconds                                  0.000086                       # Number of seconds simulated
-ipc_max 3.379401
-cycles_max 171188
-insts_max 250266
-sim_ticks                                    85593500                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w8_t4_m30.txt ===
-sim_seconds                                  0.000072                       # Number of seconds simulated
-ipc_max 3.345791
-cycles_max 144798
-insts_max 152361
-sim_ticks                                    72398500                       # Number of ticks simulated
-=== ./result/m30/stats_o3_w8_t8_m30.txt ===
-sim_seconds                                  0.000066                       # Number of seconds simulated
-ipc_max 3.286575
-cycles_max 131098
-insts_max 98727
-sim_ticks                                    65548500                       # Number of ticks simulated
+=== Gem5 Q9 Results Summary ===
+Generated: lundi 23 février 2026, 06:50:53 (UTC+0100)
+
+=== size=64 width=2 threads=1 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t1/stats.txt
+sim_seconds                                  0.001151                       # Number of seconds simulated
+sim_ticks                                  1151249000                       # Number of ticks simulated
+ipc_max 1.784232
+cycles_max 2302499
+insts_max 4108193
+
+=== size=64 width=2 threads=2 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t2/stats.txt
+sim_seconds                                  0.000638                       # Number of seconds simulated
+sim_ticks                                   638482000                       # Number of ticks simulated
+ipc_max 1.927467
+cycles_max 1276965
+insts_max 2118995
+
+=== size=64 width=2 threads=4 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t4/stats.txt
+sim_seconds                                  0.000382                       # Number of seconds simulated
+sim_ticks                                   381588000                       # Number of ticks simulated
+ipc_max 1.923079
+cycles_max 763177
+insts_max 1122999
+
+=== size=64 width=2 threads=8 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t8/stats.txt
+sim_seconds                                  0.000254                       # Number of seconds simulated
+sim_ticks                                   253995000                       # Number of ticks simulated
+ipc_max 1.910628
+cycles_max 507991
+insts_max 626339
+
+=== size=64 width=2 threads=16 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w2_t16/stats.txt
+sim_seconds                                  0.000196                       # Number of seconds simulated
+sim_ticks                                   196375000                       # Number of ticks simulated
+ipc_max 1.880036
+cycles_max 392751
+insts_max 382580
+
+=== size=64 width=4 threads=1 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t1/stats.txt
+sim_seconds                                  0.000680                       # Number of seconds simulated
+sim_ticks                                   680105500                       # Number of ticks simulated
+ipc_max 3.020259
+cycles_max 1360212
+insts_max 4108193
+
+=== size=64 width=4 threads=2 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t2/stats.txt
+sim_seconds                                  0.000398                       # Number of seconds simulated
+sim_ticks                                   398273500                       # Number of ticks simulated
+ipc_max 3.537798
+cycles_max 796548
+insts_max 2118321
+
+=== size=64 width=4 threads=4 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t4/stats.txt
+sim_seconds                                  0.000258                       # Number of seconds simulated
+sim_ticks                                   257608500                       # Number of ticks simulated
+ipc_max 3.514918
+cycles_max 515218
+insts_max 1121977
+
+=== size=64 width=4 threads=8 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t8/stats.txt
+sim_seconds                                  0.000188                       # Number of seconds simulated
+sim_ticks                                   188133500                       # Number of ticks simulated
+ipc_max 3.457122
+cycles_max 376268
+insts_max 626001
+
+=== size=64 width=4 threads=16 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w4_t16/stats.txt
+sim_seconds                                  0.000157                       # Number of seconds simulated
+sim_ticks                                   156680500                       # Number of ticks simulated
+ipc_max 3.282794
+cycles_max 313362
+insts_max 384336
+
+=== size=64 width=8 threads=1 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t1/stats.txt
+sim_seconds                                  0.000665                       # Number of seconds simulated
+sim_ticks                                   664658500                       # Number of ticks simulated
+ipc_max 3.090452
+cycles_max 1329318
+insts_max 4108193
+
+=== size=64 width=8 threads=2 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t2/stats.txt
+sim_seconds                                  0.000390                       # Number of seconds simulated
+sim_ticks                                   390042500                       # Number of ticks simulated
+ipc_max 3.617589
+cycles_max 780086
+insts_max 2118929
+
+=== size=64 width=8 threads=4 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t4/stats.txt
+sim_seconds                                  0.000253                       # Number of seconds simulated
+sim_ticks                                   252787500                       # Number of ticks simulated
+ipc_max 3.598638
+cycles_max 505576
+insts_max 1121977
+
+=== size=64 width=8 threads=8 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t8/stats.txt
+sim_seconds                                  0.000188                       # Number of seconds simulated
+sim_ticks                                   188270500                       # Number of ticks simulated
+ipc_max 3.677927
+cycles_max 376542
+insts_max 632382
+
+=== size=64 width=8 threads=16 ===
+file: /auto/j/julia-ellen.dias/tp5_work/results/s64_w8_t16/stats.txt
+sim_seconds                                  0.000158                       # Number of seconds simulated
+sim_ticks                                   157699500                       # Number of ticks simulated
+ipc_max 3.808231
+cycles_max 315400
+insts_max 394904
+
