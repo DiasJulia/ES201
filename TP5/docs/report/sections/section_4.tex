@@ -1,9 +1,7 @@
-\section*{Configuration CMP la plus efficace}
+\section*{Q13-Configuration CMP la plus efficace}
 
-\subsection*{Q13 : Proposez une configuration ou une gamme de configuration de l’architecture CMP
-(nombre de threads de l’application test omp, nombre et type de coeurs) qui vous semble la
-plus appropriée si la contrainte recherchée par le concepteur du système est l’efficacité
-surfacique ? Discussion et interprétation (max. 10 lignes).}
+Les résultats du TP4 montrent que le Cortex A7 atteint un bon compromis performance/surface autour de 8--16\,kB de cache L1, où l’IPC progresse peu au-delà tandis que la surface continue d’augmenter, alors que le Cortex A15 obtient une efficacité surfacique maximale à 32\,kB mais avec un coût silicium nettement plus élevé. Les mesures du TP5 indiquent par ailleurs que l’augmentation du nombre de cœurs améliore l’exécution mais avec des gains de plus en plus faibles à partir d’environ 8--16 threads, la limitation se déplaçant vers la hiérarchie mémoire et les points de synchronisation. Dans une optique d’efficacité surfacique (performance par mm$^2$), il est donc préférable de multiplier des cœurs compacts plutôt que d’intégrer un petit nombre de cœurs larges et coûteux. Une architecture CMP composée majoritairement de Cortex A7, exploitant entre 8 et 16 threads actifs, constitue ainsi la gamme la plus pertinente pour maximiser la densité de performance sur l’application \texttt{test\_omp}.
 
-\subsection*{Q14 : Au regard de l’évolution théorique du speedup et son évolution constatée lors des
-questions précédentes, proposez une tentative d’explication (max. 10 lignes).}
+\section*{Q14-Facultatif}
+
+Théoriquement, le speedup devrait évoluer de manière quasi proportionnelle au nombre de cœurs dans le cas idéal. Toutefois, les résultats obtenus montrent une croissance sous-linéaire et une saturation progressive lorsque le nombre de threads augmente, en raison des coûts de synchronisation et de la pression accrue sur la hiérarchie mémoire partagée. Un comportement supra-linéaire peut néanmoins apparaître lorsque la taille des matrices dépasse la capacité du cache L1 en configuration mono-cœur. En répartissant le travail sur plusieurs cœurs, chaque thread manipule un sous-ensemble plus réduit des données, ce qui diminue le \emph{working set} par cœur, améliore la localité mémoire et réduit les taux de défauts. La diminution des accès aux niveaux mémoire lents peut alors conduire temporairement à un gain supérieur au simple effet du parallélisme, expliquant un speedup supérieur au nombre de cœurs actifs.
