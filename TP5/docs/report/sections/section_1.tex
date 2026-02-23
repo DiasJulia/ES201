@@ -6,6 +6,14 @@ comportement de la hiérarchie mémoire et de la cohérence des caches pour l’
 multiplication de matrices. On supposera que le thread principal se trouve sur le processeur
 d’indice 1.}
 
+\begin{itemize}
+    \item \textbf{Matrice A :} Chaque ligne est stockée dans le cache d’un processeur différent chargé depuis la mémoire principale.
+    \item Ainsi, chaque processeur a une ligne différente donc ne communique pas avec les autres, on a donc peu d'incohérence.
+    \item Plus on a de thread moins on a d'incohérence.
+    \item \textbf{Matrice B :} Elle est lue et stockée dans chaque thread pour calculer $C$ mais elle n’est pas modifiée donc nous n’avons pas non plus d'incohérence.
+    \item \textbf{Matrice C :} Par définition du produit de matrice chaque ligne de $C$ correspond au produit de la ligne de $A$ correspondante avec $B$, ainsi, chaque processus écrit des lignes différentes de $C$ donc on n’a pas de problème de cohérence.
+\end{itemize}
+
 \section*{Paramètres de l'architecture multicoeurs}
 
 \subsection*{Q2 : Examinez le fichier de déclaration d’un élément de type « processeur superscalaire out-
@@ -16,6 +24,26 @@ des séances TD/TP précédentes. Le fichier à consulter est le suivant:}
 \begin{verbatim}
     $GEM5/src/cpu/o3/O3CPU.py
 \end{verbatim}
+
+\begin{table}[h]
+\centering
+\caption{Paramètres de configuration du processeur}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Paramètre} & \textbf{Signification} & \textbf{Valeur par défaut} \\
+\hline
+fetchWidth & Nombre d’instructions récupérées par cycle & 8 \\
+\hline
+fetchBufferSize & Taille du buffer & 64 \\
+\hline
+decodeWidth & Nombre d'instructions décodées par cycle & 8 \\
+\hline
+cacheStorePorts & Nombre de ports disponibles pour accéder au cache (écriture) & 200 \\
+\hline
+issueWidth & Nombre d'instructions émises par cycle & 8 \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection*{Q3 : Examinez le fichier d’options de la plateforme se.py, puis déterminez et présentez sous
 forme de tableau les valeurs par défaut des paramètres suivants :}
@@ -30,3 +58,19 @@ Le fichier d’options à consulter est le suivant :
 \begin{verbatim}
     $GEM5/configs/common/Options.py
 \end{verbatim}
+
+\begin{table}[h]
+\centering
+\caption{Spécifications des caches}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & \textbf{L1 (l1d)} & \textbf{L1 (l1i)} & \textbf{L2 (l2)} \\
+\hline
+Taille du cache & 64kB & 32kB & 2MB \\
+\hline
+Taille de la ligne & 64B & 64B & 64B \\
+\hline
+Associativité & 2 & 2 & 8 \\
+\hline
+\end{tabular}
+\end{table}
